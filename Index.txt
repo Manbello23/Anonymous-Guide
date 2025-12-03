@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Beginning of a Beautiful Journey</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="A 90-day guided spiritual journal — one quiet chapter each day." />
+</head>
+<body>
+  <div id="site">
+    <!-- cover / hero -->
+    <main id="hero" class="scene">
+      <div class="cover-wrap" aria-hidden="false">
+        <div class="journal-cover" id="journalCover" role="img" aria-label="Beginning of a Beautiful Journey">
+          <div class="title">
+            <div class="main">Beginning of a<br/>Beautiful Journey</div>
+            <div class="sub">a 90-day guided journal</div>
+          </div>
+        </div>
+        <p class="hero-line">Every journey begins with a quiet moment inside the heart.</p>
+        <button id="beginBtn" class="btn-gold" aria-label="Begin the journey">Begin</button>
+      </div>
+    </main>
+
+    <!-- app area (hidden until begin) -->
+    <div id="app" class="hidden">
+      <header class="topbar">
+        <div class="brand">Beginning of a Beautiful Journey</div>
+        <button id="menuBtn" class="hamburger" aria-label="Open menu" aria-expanded="false">☰</button>
+      </header>
+
+      <nav id="menuPanel" class="menu hidden" aria-hidden="true">
+        <ul>
+          <li><button id="goHome">Home</button></li>
+          <li><button id="goJournal">Journal</button></li>
+          <li><button id="goReflections">Reflections</button></li>
+          <li><button id="goAbout">About</button></li>
+          <li><button id="goContact">Contact</button></li>
+        </ul>
+      </nav>
+
+      <main id="mainContent" class="reader-area">
+        <!-- home / landing inside app -->
+        <section id="homeView" class="view">
+          <h1>Beginning of a Beautiful Journey</h1>
+          <p class="lead">A 90-day guided companion to soften the heart, renew presence, and deepen your connection — gently, quietly, sincerely.</p>
+          <button id="enterJournal" class="btn-gold">Go to Today's Entry</button>
+        </section>
+
+        <!-- journal index & reader -->
+        <section id="journalView" class="view hidden">
+          <div class="journal-index">
+            <div class="index-row">
+              <div class="index-info">
+                <h2>Journal Index</h2>
+                <p>One chapter opens every day. Return, read, reflect.</p>
+              </div>
+              <div id="indexGrid" class="grid"></div>
+            </div>
+          </div>
+
+          <article id="dayReader" class="day-reader hidden" role="article" aria-live="polite">
+            <header class="day-header">
+              <button id="prevDay" class="nav small">‹ Prev</button>
+              <div class="day-title" id="dayTitle">Day 1 — The First Step</div>
+              <button id="nextDay" class="nav small">Next ›</button>
+            </header>
+
+            <section class="ayah" id="ayahArea" aria-hidden="false">
+              <div class="arabic" id="ayahArabic"></div>
+              <div class="translation" id="ayahTranslation"></div>
+            </section>
+
+            <section class="content" id="dayContent"></section>
+
+            <section class="reflection">
+              <label for="reflectionInput">Your private note (saved on this device)</label>
+              <textarea id="reflectionInput" placeholder="Write what your heart feels today…"></textarea>
+              <div class="ref-actions">
+                <button id="saveNote" class="btn">Save</button>
+                <button id="copyNote" class="btn">Copy</button>
+                <button id="clearNote" class="btn red">Clear</button>
+              </div>
+            </section>
+
+            <div id="lockedOverlay" class="locked hidden" aria-hidden="true">
+              <div class="lock-card">
+                <div class="lock-icon">🔒</div>
+                <p class="lock-text">This chapter will open in its own time. Return tomorrow for the next step.</p>
+                <button id="backToIndex" class="btn">Back to Index</button>
+              </div>
+            </div>
+
+          </article>
+        </section>
+
+        <!-- reflections view -->
+        <section id="reflectionsView" class="view hidden">
+          <h2>Your Reflections</h2>
+          <p>Saved locally on this device. To keep them safe, backup by copying or exporting.</p>
+          <div id="myNotes" class="notes-list"></div>
+          <button id="exportAll" class="btn-gold">Export All Notes</button>
+        </section>
+
+        <!-- about -->
+        <section id="aboutView" class="view hidden">
+          <h2>About the Journal</h2>
+          <p class="lead">This journal is a companion — not a cure. It offers one small, sincere chapter each day. Read slowly. Reflect honestly. Return often.</p>
+          <h3>What it is</h3>
+          <p>A 90-day guided path to quiet the heart and draw nearer to what matters.</p>
+          <h3>What it is not</h3>
+          <p>Not magic. Not instant. Not a replacement for prayer or effort. It is a steady, daily walk.</p>
+        </section>
+
+        <!-- contact -->
+        <section id="contactView" class="view hidden">
+          <h2>Contact</h2>
+          <p>If you have feedback or reflections you wish to share, email: <a href="mailto:hello@example.com">hello@example.com</a></p>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <small>He is with you wherever you are — Qur’an 57:4</small>
+      </footer>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
