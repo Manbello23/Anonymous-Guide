@@ -32,7 +32,7 @@ Ask yourself:
 “What am I running from?
 And what am I hoping to run toward?”
 Don’t overthink. Don’t write paragraphs. Just be honest — because honesty is the first form of strength.`
-  } 
+  }, 
    {
      day: 2,
     title: "Stand still and see yourself",
