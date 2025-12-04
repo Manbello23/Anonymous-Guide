@@ -83,3 +83,19 @@ textarea{width:100%;padding:12px;border-radius:8px;border:1px solid rgba(0,0,0,0
   .hero-title{font-size:26px}
   .days-list{grid-template-columns:repeat(4,1fr)}
 }
+/* Fix stacking so views are clickable */
+.site-header {
+  position: relative;
+  z-index: 5;
+}
+
+.view {
+  position: relative;
+  z-index: 1;
+}
+
+.site-foot {
+  position: relative;
+  z-index: 1;
+}
+
