@@ -33,8 +33,8 @@ Ask yourself:
 And what am I hoping to run toward?”
 Don’t overthink. Don’t write paragraphs. Just be honest — because honesty is the first form of strength.`
   }, 
-   {
-     day: 2,
+  {
+    day: 2,
     title: "Stand still and see yourself",
     ayahArabic: "﴿ إِنَّ اللّٰهَ مَعَ الصَّابِرِينَ ﴾",
     ayahTrans: "Indeed, Allah is with the patient.",
@@ -55,8 +55,8 @@ Let that truth settle gently.
 TODAY’S REFLECTION
 Ask:
 “What part of me needs compassion right now?”
-Let the answer come — even if it’s a single word.
-   }
+Let the answer come — even if it’s a single word.`
+  }
 ];
 
 /* ---------- storage keys ---------- */
@@ -64,54 +64,77 @@ const KEY_UNLOCKED = 'ag_unlocked';
 const KEY_LAST_UNLOCK = 'ag_lastUnlockTs';
 const KEY_NOTE = d => `ag_note_day_${d}`;
 
-/* ---------- DOM refs ---------- */
-const home = el('home'), journal = el('journal'), day = el('day'), about = el('about');
-const beginBtn = id('beginBtn'), openJournal = id('openJournal'), aboutBtn = id('aboutBtn');
-const daysList = id('daysList'), backBtn = id('backBtn'), dayTitle = id('dayTitle');
-const ayahArabic = id('ayahArabic'), ayahTrans = id('ayahTrans'), dayContent = id('dayContent');
-const note = id('note'), saveNote = id('saveNote'), clearNote = id('clearNote');
-const unlockNext = id('unlockNext'), unlockInfo = id('unlockInfo');
-const homeBtn = id('homeBtn');
+/* ---------- DOM refs (will be assigned after DOMContentLoaded) ---------- */
+let home, journal, day, about;
+let beginBtn, openJournal, aboutBtn;
+let daysList, backBtn, dayTitle;
+let ayahArabic, ayahTrans, dayContent;
+let note, saveNote, clearNote;
+let unlockNext, unlockInfo, homeBtn;
 
 let currentDay = 1;
 
+/* ---------- helpers ---------- */
+function el(id){ return document.getElementById(id); }
+function safeAddListener(elm, ev, fn){
+  if(!elm) return console.warn('Missing element for listener:', ev, elm);
+  elm.addEventListener(ev, fn);
+}
+
 /* ---------- init ---------- */
 document.addEventListener('DOMContentLoaded', ()=>{
+  // assign DOM refs now (after DOM is ready)
+  home = el('home'); journal = el('journal'); day = el('day'); about = el('about');
+  beginBtn = el('beginBtn'); openJournal = el('openJournal'); aboutBtn = el('aboutBtn');
+  daysList = el('daysList'); backBtn = el('backBtn'); dayTitle = el('dayTitle');
+  ayahArabic = el('ayahArabic'); ayahTrans = el('ayahTrans'); dayContent = el('dayContent');
+  note = el('note'); saveNote = el('saveNote'); clearNote = el('clearNote');
+  unlockNext = el('unlockNext'); unlockInfo = el('unlockInfo');
+  homeBtn = el('homeBtn');
+
+  // initialize storage keys if absent
   if(!localStorage.getItem(KEY_UNLOCKED)){
     localStorage.setItem(KEY_UNLOCKED, '1');
     localStorage.setItem(KEY_LAST_UNLOCK, Date.now().toString());
   }
+
   bindUI();
   showView('home');
   renderDays();
 });
 
-/* ---------- helpers ---------- */
-function el(id){ return document.getElementById(id); }
-function id(id){ return document.getElementById(id); }
-function showView(name){
-  [home,journal,day,about].forEach(s=>s.classList.add('hidden'));
-  if(name==='home') home.classList.remove('hidden');
-  if(name==='journal') journal.classList.remove('hidden');
-  if(name==='day') day.classList.remove('hidden');
-  if(name==='about') about.classList.remove('hidden');
-}
+/* ---------- UI binding ---------- */
 function bindUI(){
-  beginBtn.addEventListener('click', ()=> { openDay(1); showView('day'); });
-  openJournal.addEventListener('click', ()=> { showView('journal'); });
-  aboutBtn.addEventListener('click', ()=> showView('about'));
-  backBtn.addEventListener('click', ()=> showView('journal'));
-  saveNote.addEventListener('click', saveCurrentNote);
-  clearNote.addEventListener('click', clearCurrentNote);
-  unlockNext.addEventListener('click', tryUnlockNext);
-  homeBtn.addEventListener('click', ()=> showView('home'));
+  safeAddListener(beginBtn, 'click', ()=> { openDay(1); showView('day'); });
+  safeAddListener(openJournal, 'click', ()=> { showView('journal'); });
+  safeAddListener(aboutBtn, 'click', ()=> showView('about'));
+  safeAddListener(backBtn, 'click', ()=> showView('journal'));
+  safeAddListener(saveNote, 'click', saveCurrentNote);
+  safeAddListener(clearNote, 'click', clearCurrentNote);
+  safeAddListener(unlockNext, 'click', tryUnlockNext);
+  safeAddListener(homeBtn, 'click', ()=> showView('home'));
+}
+
+/* ---------- view helpers ---------- */
+function showView(name){
+  // guard: ensure elements exist
+  [home,journal,day,about].forEach(s=>{
+    if(!s) return; 
+    s.classList.add('hidden');
+  });
+  if(name==='home' && home) home.classList.remove('hidden');
+  if(name==='journal' && journal) journal.classList.remove('hidden');
+  if(name==='day' && day) day.classList.remove('hidden');
+  if(name==='about' && about) about.classList.remove('hidden');
 }
 
 /* ---------- render days list ---------- */
 function renderDays(){
+  if(!daysList) return;
   daysList.innerHTML = '';
   const unlocked = Number(localStorage.getItem(KEY_UNLOCKED) || 1);
-  daysData.forEach(d=>{
+  // safety: ensure daysData array exists
+  (daysData || []).forEach(d=>{
     const t = document.createElement('div');
     t.className = 'day-tile' + (d.day>unlocked ? ' locked' : '');
     t.textContent = `Day ${d.day}`;
@@ -128,24 +151,26 @@ function renderDays(){
 function openDay(n){
   const unlocked = Number(localStorage.getItem(KEY_UNLOCKED) || 1);
   if(n>unlocked) return;
-  const data = daysData.find(x=>x.day===n);
+  const data = (daysData || []).find(x=>x.day===n);
   if(!data) return alert('Content not available yet.');
   currentDay = n;
-  dayTitle.textContent = `DAY ${data.day} — ${data.title}`;
-  ayahArabic.textContent = data.ayahArabic || '';
-  ayahTrans.textContent = data.ayahTrans || '';
-  dayContent.innerHTML = formatText(data.text);
+  if(dayTitle) dayTitle.textContent = `DAY ${data.day} — ${data.title}`;
+  if(ayahArabic) ayahArabic.textContent = data.ayahArabic || '';
+  if(ayahTrans) ayahTrans.textContent = data.ayahTrans || '';
+  if(dayContent) dayContent.innerHTML = formatText(data.text);
   // load note
-  note.value = localStorage.getItem(KEY_NOTE(n)) || '';
+  if(note) note.value = localStorage.getItem(KEY_NOTE(n)) || '';
   updateUnlockUI();
 }
 
 /* ---------- notes ---------- */
 function saveCurrentNote(){
+  if(!note) return;
   localStorage.setItem(KEY_NOTE(currentDay), note.value);
   alert('Saved locally on this device.');
 }
 function clearCurrentNote(){
+  if(!note) return;
   if(confirm('Clear your note for this day?')){
     localStorage.removeItem(KEY_NOTE(currentDay));
     note.value = '';
@@ -154,9 +179,10 @@ function clearCurrentNote(){
 
 /* ---------- unlock logic ---------- */
 function updateUnlockUI(){
+  if(!unlockNext || !unlockInfo) return;
   const unlocked = Number(localStorage.getItem(KEY_UNLOCKED) || 1);
   const last = Number(localStorage.getItem(KEY_LAST_UNLOCK) || 0);
-  if(unlocked >= daysData.length){
+  if(unlocked >= (daysData || []).length){
     unlockNext.style.display = 'none';
     unlockInfo.textContent = 'All chapters unlocked.';
     return;
@@ -177,7 +203,7 @@ function updateUnlockUI(){
 
 function tryUnlockNext(){
   const unlocked = Number(localStorage.getItem(KEY_UNLOCKED) || 1);
-  if(unlocked >= daysData.length) return;
+  if(unlocked >= (daysData || []).length) return;
   const last = Number(localStorage.getItem(KEY_LAST_UNLOCK) || 0);
   const now = Date.now();
   const ms24 = 24*60*60*1000;
@@ -202,7 +228,7 @@ function escapeHtml(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').repl
 /* ---------- debug: owner helpers (only in console) ---------- */
 window.ag_forceUnlock = function(){
   const unlocked = Number(localStorage.getItem(KEY_UNLOCKED) || 1);
-  localStorage.setItem(KEY_UNLOCKED, String(Math.min(unlocked+1, daysData.length)));
+  localStorage.setItem(KEY_UNLOCKED, String(Math.min(unlocked+1, (daysData || []).length)));
   localStorage.setItem(KEY_LAST_UNLOCK, '0');
   renderDays();
   alert('Forced unlock (debug).');
