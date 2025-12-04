@@ -4,71 +4,81 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Anonymous Guide — Beginning of a Beautiful Journey</title>
-  <link rel="stylesheet" href="styles.css">
+
+  <!-- Playfair Display serif -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="app">
-    <header class="top">
+  <main id="app" class="app">
+    <header class="site-header">
       <div class="brand">Anonymous Guide</div>
-      <button id="menuBtn" class="menuBtn" aria-label="Open menu">☰</button>
+      <nav class="mini">
+        <button id="homeBtn" class="link">Home</button>
+        <button id="aboutBtn" class="link">About</button>
+      </nav>
     </header>
 
-    <main id="main" class="container">
-      <section id="hero" class="panel hero">
-        <div class="cover" aria-hidden="true">
-          <div class="cover-title">Beginning of a<br/>Beautiful Journey</div>
+    <section id="home" class="view">
+      <div class="hero">
+        <h1 class="hero-title">Beginning of a<br/>Beautiful Journey</h1>
+        <p class="hero-sub">A quiet 90-day guide to return your heart to what matters. Read slowly. Reflect honestly.</p>
+        <div class="actions">
+          <button id="beginBtn" class="btn primary">Begin the Journey</button>
+          <button id="openJournal" class="btn">Open Journal</button>
         </div>
-        <p class="hero-sub">Every journey begins with a quiet moment inside the heart.</p>
-        <div class="hero-actions">
-          <button class="btn primary" id="beginBtn">Begin the Journey</button>
-          <button class="btn" id="aboutBtn">About the Journal</button>
-        </div>
-      </section>
+      </div>
+    </section>
 
-      <section id="journey" class="panel hidden">
-        <h2>Journal</h2>
-        <p class="muted">One chapter at a time. Your reflections save to this device only.</p>
-        <div id="daysGrid" class="grid"></div>
-      </section>
+    <section id="journal" class="view hidden">
+      <div class="journal-wrap">
+        <div id="daysList" class="days-list" aria-live="polite"></div>
+      </div>
+    </section>
 
-      <section id="dayView" class="panel hidden">
-        <div class="day-header">
-          <button class="small" id="backToJournal">‹ Back</button>
-          <div id="dayHeadText" class="day-head">DAY</div>
-          <div>
-            <button class="small" id="unlockNextBtn">Unlock Next</button>
-          </div>
+    <section id="day" class="view hidden">
+      <div class="day-wrap">
+        <div class="day-top">
+          <button id="backBtn" class="small">◂ Back</button>
+          <div id="dayTitle" class="day-title">DAY</div>
+          <div class="spacer"></div>
         </div>
 
         <article class="day-card">
-          <div id="ayahArabic" class="ayah-arabic" aria-hidden="false"></div>
+          <div id="ayahArabic" class="ayah-arabic"></div>
           <div id="ayahTrans" class="ayah-trans muted"></div>
-          <div id="dayContent" class="content"></div>
+          <div id="dayContent" class="day-content"></div>
+
           <div class="reflection">
             <label for="note">Your private reflection (saved on this device)</label>
-            <textarea id="note" placeholder="Write quietly…" rows="6"></textarea>
-            <div class="actions">
+            <textarea id="note" rows="6" placeholder="Write quietly…"></textarea>
+            <div class="note-actions">
               <button id="saveNote" class="btn">Save</button>
-              <button id="copyNote" class="btn">Copy</button>
               <button id="clearNote" class="btn ghost">Clear</button>
             </div>
           </div>
+
+          <div class="unlock-row">
+            <button id="unlockNext" class="btn">Unlock Next</button>
+            <div id="unlockInfo" class="muted small"></div>
+          </div>
         </article>
-      </section>
+      </div>
+    </section>
 
-      <section id="about" class="panel hidden">
+    <section id="about" class="view hidden">
+      <div class="about-card">
         <h2>About the Journal</h2>
-        <p>This 90-day guide is a companion — not a cure. It offers short daily reflections designed to help you return to what matters. Read slowly. Reflect honestly.</p>
-        <p><strong>Note:</strong> This is not magic or a shortcut. Growth needs patience and sincerity.</p>
-      </section>
+        <p>This 90-day guide is a gentle companion — not a miracle. It offers daily reflections, short prompts and space for private notes so you can rebuild a steady connection to Allah and to yourself. Be patient. Be sincere.</p>
+        <p><strong>Note:</strong> Content unlocks slowly to encourage steady practice. Notes save only on your device.</p>
+      </div>
+    </section>
 
-    </main>
-
-    <footer class="foot">
+    <footer class="site-foot">
       <small>He is with you wherever you are — Anonymous Guide</small>
     </footer>
-  </div>
+  </main>
 
   <script src="script.js"></script>
 </body>
