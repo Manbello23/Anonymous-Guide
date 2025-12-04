@@ -30,14 +30,14 @@
 
 *{box-sizing:border-box}
 html,body{height:100%;margin:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
-.app{max-width:var(--maxw);margin:24px auto;padding:22px}
-.site-header{display:flex;align-items:center;justify-content:space-between;padding-bottom:12px}
+.app{max-width:var(--maxw);margin:24px auto;padding:22px;pointer-events:auto}
+.site-header{display:flex;align-items:center;justify-content:space-between;padding-bottom:12px;position:relative;z-index:20;background:transparent}
 .brand{font-weight:700;color:var(--gold);letter-spacing:0.8px}
 .mini .link{background:transparent;border:0;color:var(--muted);cursor:pointer;font-size:14px}
 
 /* views */
-.view{min-height:60vh}
-.hidden{display:none}
+.view{min-height:60vh;position:relative;z-index:1}
+.hidden{display:none !important;pointer-events:none !important;opacity:0 !important}
 
 /* hero */
 .hero{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;padding:40px 18px;border-radius:12px}
@@ -76,26 +76,10 @@ textarea{width:100%;padding:12px;border-radius:8px;border:1px solid rgba(0,0,0,0
 .about-card{background:var(--card);padding:20px;border-radius:12px}
 
 /* footer */
-.site-foot{text-align:center;color:var(--muted);margin-top:18px;font-size:13px}
+.site-foot{text-align:center;color:var(--muted);margin-top:18px;font-size:13px;position:relative;z-index:1}
 
 /* responsive */
 @media(max-width:640px){
   .hero-title{font-size:26px}
   .days-list{grid-template-columns:repeat(4,1fr)}
 }
-/* Fix stacking so views are clickable */
-.site-header {
-  position: relative;
-  z-index: 5;
-}
-
-.view {
-  position: relative;
-  z-index: 1;
-}
-
-.site-foot {
-  position: relative;
-  z-index: 1;
-}
-
