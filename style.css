@@ -1,82 +1,85 @@
 :root{
-  --gold:#C7A97B;
-  --deep:#1a120b;
-  --cream:#F6F0E6;
-  --muted: #9b8b77;
-  --card-dark:#2b221d;
-  --glass: rgba(255,255,255,0.03);
-  --radius:12px;
-  --max:900px;
-  --accent: rgba(199,169,123,0.08);
-  font-family: 'Playfair Display', serif;
+  --gold: #C7A97B;
+  --bg-dark: #14100d;
+  --bg-light: #fbf7f4;
+  --text-dark: #24160f;
+  --muted-dark: #a89a8f;
+  --card-dark: #221916;
+  --radius:14px;
+  --maxw:900px;
+  font-family: "Playfair Display", serif;
 }
 
-/* theme auto via prefers-color-scheme */
+/* auto theme */
 @media (prefers-color-scheme: dark){
   :root{
-    --bg: #120b07;
+    --bg: var(--bg-dark);
     --text: #efe7dd;
-    --panel-bg: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+    --muted: var(--muted-dark);
     --card: var(--card-dark);
   }
 }
 @media (prefers-color-scheme: light){
   :root{
-    --bg: #faf6f2;
-    --text: #22150f;
-    --panel-bg: linear-gradient(180deg, rgba(0,0,0,0.02), transparent);
-    --card: #fff;
+    --bg: var(--bg-light);
+    --text: var(--text-dark);
+    --muted: #7a6b60;
+    --card: #ffffff;
   }
 }
+
 *{box-sizing:border-box}
-html,body{height:100%; margin:0; background:var(--bg); color:var(--text); -webkit-font-smoothing:antialiased;}
-#app{max-width:var(--max); margin:28px auto; padding:18px;}
+html,body{height:100%;margin:0;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+.app{max-width:var(--maxw);margin:24px auto;padding:22px}
+.site-header{display:flex;align-items:center;justify-content:space-between;padding-bottom:12px}
+.brand{font-weight:700;color:var(--gold);letter-spacing:0.8px}
+.mini .link{background:transparent;border:0;color:var(--muted);cursor:pointer;font-size:14px}
 
-/* header */
-.top{display:flex;justify-content:space-between;align-items:center;padding:6px 2px 18px 2px}
-.brand{font-weight:700;color:var(--gold);letter-spacing:0.6px}
-.menuBtn{background:transparent;border:0;color:var(--text);font-size:18px}
-
-/* panels */
-.container{padding:6px}
-.panel{padding:20px;margin-bottom:18px;border-radius:12px;background:var(--panel-bg);backdrop-filter: blur(6px);border:1px solid rgba(255,255,255,0.02)}
+/* views */
+.view{min-height:60vh}
 .hidden{display:none}
 
 /* hero */
-.hero{display:flex;flex-direction:column;align-items:center;gap:12px;text-align:center}
-.cover{width:320px;height:420px;border-radius:12px;background:linear-gradient(180deg,#2a1e16,#1a130c);display:flex;align-items:flex-end;justify-content:center;padding:28px;box-shadow:0 12px 40px rgba(0,0,0,0.6)}
-.cover-title{color:var(--gold);font-size:20px;line-height:1.05}
-.hero-sub{max-width:640px;color:var(--muted);margin:6px 0}
-.hero-actions{display:flex;gap:12px;flex-direction:row;width:100%;max-width:420px}
+.hero{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;padding:40px 18px;border-radius:12px}
+.hero-title{font-size:34px;line-height:1.02;color:var(--text);margin:0}
+.hero-sub{max-width:680px;color:var(--muted)}
+.actions{display:flex;gap:12px;margin-top:8px;width:100%;justify-content:center}
+.btn{padding:10px 16px;border-radius:999px;border:1px solid rgba(0,0,0,0.06);background:transparent;cursor:pointer;font-family:inherit}
+.btn.primary{border:1px solid var(--gold);color:var(--gold);font-weight:600}
+.btn.ghost{background:transparent;border:1px dashed rgba(0,0,0,0.04)}
 
-/* buttons */
-.btn{padding:10px 14px;border-radius:999px;border:1px solid rgba(0,0,0,0.06);background:var(--card);cursor:pointer}
-.btn.primary{border:1px solid var(--gold);color:var(--gold);background:transparent}
-.btn.ghost{background:transparent;border:1px dashed rgba(255,255,255,0.04)}
+/* journal list */
+.journal-wrap{padding:10px}
+.days-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(80px,1fr));gap:10px}
+.day-tile{padding:18px;border-radius:10px;text-align:center;background:var(--card);cursor:pointer;border:1px solid rgba(0,0,0,0.04)}
+.day-tile.locked{opacity:0.42;pointer-events:none;filter:grayscale(0.05)}
+
+/* day */
+.day-wrap{padding:12px}
+.day-top{display:flex;align-items:center;gap:8px;margin-bottom:12px}
 .small{background:transparent;border:0;color:var(--muted);cursor:pointer}
-
-/* grid */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:10px;margin-top:12px}
-.day-tile{padding:12px;border-radius:8px;text-align:center;border:1px solid rgba(255,255,255,0.02);background:var(--card);cursor:pointer}
-.day-tile.locked{opacity:0.45;filter:grayscale(0.05);cursor:default}
-
-/* day view */
-.day-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
-.day-card{background:var(--card);padding:18px;border-radius:10px;color:var(--text)}
-.ayah-arabic{font-family: 'Scheherazade New', serif; font-size:20px;text-align:center;margin-bottom:6px;color:var(--gold)}
-.ayah-trans{font-size:13px;color:var(--muted);text-align:center;margin-bottom:12px}
-.content{font-size:16px;color:var(--text);line-height:1.7}
+.day-title{font-weight:600}
+.day-card{background:var(--card);padding:20px;border-radius:12px;line-height:1.7}
+.ayah-arabic{font-size:20px;text-align:center;color:var(--gold);margin-bottom:6px}
+.ayah-trans{font-size:13px;text-align:center;color:var(--muted);margin-bottom:12px}
+.day-content{font-size:17px;color:var(--text)}
 
 /* reflection */
 .reflection{margin-top:14px}
-textarea{width:100%;padding:12px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);resize:vertical;font-family:inherit}
-.actions{display:flex;gap:8px;margin-top:8px}
+textarea{width:100%;padding:12px;border-radius:8px;border:1px solid rgba(0,0,0,0.06);font-family:inherit;resize:vertical}
+.note-actions{display:flex;gap:8px;margin-top:8px}
+.unlock-row{display:flex;align-items:center;gap:12px;justify-content:space-between;margin-top:12px}
+.muted{color:var(--muted)}
+.small{font-size:13px;color:var(--muted)}
+
+/* about */
+.about-card{background:var(--card);padding:20px;border-radius:12px}
 
 /* footer */
-.foot{text-align:center;color:var(--muted);font-size:13px;padding:10px;margin-top:10px}
+.site-foot{text-align:center;color:var(--muted);margin-top:18px;font-size:13px}
 
-/* small screens */
-@media (max-width:640px){
-  .cover{width:260px;height:360px}
-  .grid{grid-template-columns:repeat(4,1fr)}
+/* responsive */
+@media(max-width:640px){
+  .hero-title{font-size:26px}
+  .days-list{grid-template-columns:repeat(4,1fr)}
 }
