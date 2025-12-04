@@ -32,7 +32,31 @@ Ask yourself:
 “What am I running from?
 And what am I hoping to run toward?”
 Don’t overthink. Don’t write paragraphs. Just be honest — because honesty is the first form of strength.`
-  }
+  } 
+   {
+     day: 2,
+    title: "Stand still and see yourself",
+    ayahArabic: "﴿ إِنَّ اللّٰهَ مَعَ الصَّابِرِينَ ﴾",
+    ayahTrans: "Indeed, Allah is with the patient.",
+    text: `TODAY IS NOT ABOUT MOVING
+Yesterday was your first step. Today is your stillness.
+True growth doesn’t begin with action. It begins with awareness.
+Before walking forward, you must know where you are standing. This is not weakness. This is wisdom.
+THE GROUND BENEATH YOU
+Gently ask yourself:
+Where am I mentally? Where am I spiritually? Where am I emotionally? What have I been avoiding? What truth have I refused to admit? Which part of me is exhausted? Which part of me still believes things can get better?
+Let the answers rise slowly. There is no rush here.
+You’re not here to fix anything today. Just to see clearly.
+A MOMENT OF CALM
+Step outside yourself for a moment. Watch your life from a distance, without judgment.
+What do you see?
+A human being who wants to change. A heart trying to return to its Lord. Someone who hasn’t given up.
+Let that truth settle gently.
+TODAY’S REFLECTION
+Ask:
+“What part of me needs compassion right now?”
+Let the answer come — even if it’s a single word.
+   }
 ];
 
 /* ---------- storage keys ---------- */
