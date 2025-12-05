@@ -46,7 +46,23 @@ Ask: “What am I running from — and what am I moving toward?” Keep it short
 Yesterday was your step. Today is stillness. True growth begins with awareness — seeing where you stand.
 TODAY’S REFLECTION
 Ask: “Which part of me needs compassion right now?”`
-  }
+  },
+   {
+      day: 3,
+    title: "Allowing Yourself to Slow Down",
+    ayahArabic: "﴿ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ ﴾",
+    ayahTrans: "Verily, in the remembrance of Allah hearts find rest.",
+    didYouKnow: "Allah swears by time in Surah Al-Asr — reminding us that loss begins when life becomes rushed.",
+    text: `THE RUSH INSIDE YOU
+You may feel behind. You may feel pressured to be more, heal faster, do everything.
+But the soul doesn’t grow under pressure. It grows in stillness.
+THE SACRED PAUSE
+Slowing down doesn’t mean you’re weak. It means you’re listening. It means you’re choosing presence over panic.
+Give yourself permission to breathe today — to be here, not elsewhere.
+TODAY’S REFLECTION
+Ask softly: “What can I slow down today, even slightly?”
+Small pauses create space for healing.
+}
   // <- paste day 3..30..90 objects here
 ];
 
