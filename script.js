@@ -28,13 +28,16 @@ const daysData = [
     ayahTrans: "In the name of Allah, the Most Merciful, the Most Compassionate.",
     didYouKnow: "The very first revealed word in the Qur’an was “Iqra” — to read and awaken.",
     text: `THE QUIET BEGINNING
-Every meaningful journey starts softly — not with a big plan or confidence, but with a small inward decision.
-Maybe you feel tired, lost, or your heart whispered: “It’s time.” That quiet call is enough today.
-
-AWAKENING
-Allah places gentle moments that say: Rise. Not loudly — softly. This journal is about beginning.
+Every meaningful journey starts softly — not with motivation, planning, or confidence… but with a small inward decision.
+Maybe you feel tired. Maybe lost. Maybe your heart whispered, “It’s time.”
+You didn’t arrive here by accident. Something within you refused to stay where you were.
+THE AWAKENING
+Allah places gentle moments in our lives — moments that say: Rise. Not loudly. Not forcefully. Just… rise.
+This journal isn’t about perfection. It’s about beginning.
+For today, one step is enough.
 TODAY’S REFLECTION
-Ask: “What am I running from — and what am I moving toward?” Keep it short and honest.`
+Ask: “What am I running from — and what am I moving toward?”
+Keep your answer honest. Honesty is the first form of strength.`
   },
   {
     day: 2,
@@ -42,10 +45,15 @@ Ask: “What am I running from — and what am I moving toward?” Keep it short
     ayahArabic: "﴿ إِنَّ اللَّهَ مَعَ الصَّابِرِينَ ﴾",
     ayahTrans: "Indeed, Allah is with the patient.",
     didYouKnow: "The heart appears many times in the Qur’an — it is where reminders settle.",
-    text: `TODAY IS NOT ABOUT MOVING
-Yesterday was your step. Today is stillness. True growth begins with awareness — seeing where you stand.
+    text: `TTHE CALL BACK
+We lose ourselves quietly — in routines, fears, expectations, and noise.
+But returning to yourself begins just as quietly — with awareness. With noticing. With the simple willingness to stop running.
+THE INNER TURNING
+Your heart is softer than you think. It responds to truth. It responds to sincerity. It responds to Allah.
+Today is not about becoming someone new. It’s about coming back to who you were meant to be.
 TODAY’S REFLECTION
-Ask: “Which part of me needs compassion right now?”`
+Ask yourself: “Which part of me has been waiting for my attention?”
+Write it simply. Let awareness be your first return.`
   },
    {
       day: 3,
