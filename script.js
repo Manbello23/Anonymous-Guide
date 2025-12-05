@@ -1,62 +1,53 @@
-/* Anonymous Guide — single-file site script
-   - Day data lives in daysData array
-   - localStorage keys used: unlocked, lastUnlockTs, note_day_N
+/* Anonymous Guide — improved
+   - Did-you-know shown before content
+   - Unlock schedule: next available at 5:00 AM local (nearest after lastUnlock)
+   - Larger nav, privacy info, improved rendering
+   - localStorage keys:
+      ag_unlocked (number)
+      ag_lastUnlockTs (ms)
+      ag_note_day_X
 */
 
-/* ---------- Day content (add more objects to expand) ---------- */
+/* ---------- Day content (paste full day objects here) ----------
+Each object:
+{
+  day: 1,
+  title: "The First Step",
+  ayahArabic: "﴿ ... ﴾",
+  ayahTrans: "translation..",
+  didYouKnow: "Short fact related to the day.",
+  text: `Long content ...`
+}
+---------------------------------------------------------------------------- */
+
 const daysData = [
   {
     day: 1,
     title: "The First Step",
     ayahArabic: "﴿ بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيمِ ﴾",
     ayahTrans: "In the name of Allah, the Most Merciful, the Most Compassionate.",
-    text: `THE BEGINNING
-Every meaningful journey begins quietly. Not with motivation. Not with a plan. Not with confidence. But with something much softer:
-A small decision made in the heart.
+    didYouKnow: "The very first revealed word in the Qur’an was “Iqra” — to read and awaken.",
+    text: `THE QUIET BEGINNING
+Every meaningful journey starts softly — not with a big plan or confidence, but with a small inward decision.
+Maybe you feel tired, lost, or your heart whispered: “It’s time.” That quiet call is enough today.
 
-Maybe you arrived here feeling tired. Maybe confused. Maybe overwhelmed by how far behind you feel. Or maybe… your heart simply whispered:
-“It’s time.”
-
-Whatever brought you here, know this: You didn’t come to this page by accident. You came because something inside you refused to stay where you were.
-Let that sink in.
-
-A QUIET AWAKENING
-Life has moments that shake us gently — not to hurt us, but to wake us. Moments where Allah places a feeling in your chest that says:
-“Rise.”
-Not loudly. Not forcefully. Just a quiet invitation back to yourself.
-This journal is not about perfection. It is not about fixing everything in one day. It is simply about beginning.
-For today… one step is enough.
-
+AWAKENING
+Allah places gentle moments that say: Rise. Not loudly — softly. This journal is about beginning.
 TODAY’S REFLECTION
-Ask yourself:
-“What am I running from?
-And what am I hoping to run toward?”
-Don’t overthink. Don’t write paragraphs. Just be honest — because honesty is the first form of strength.`
-  }, 
+Ask: “What am I running from — and what am I moving toward?” Keep it short and honest.`
+  },
   {
     day: 2,
-    title: "Stand still and see yourself",
-    ayahArabic: "﴿ إِنَّ اللّٰهَ مَعَ الصَّابِرِينَ ﴾",
+    title: "Stand Still and See Yourself",
+    ayahArabic: "﴿ إِنَّ اللَّهَ مَعَ الصَّابِرِينَ ﴾",
     ayahTrans: "Indeed, Allah is with the patient.",
+    didYouKnow: "The heart appears many times in the Qur’an — it is where reminders settle.",
     text: `TODAY IS NOT ABOUT MOVING
-Yesterday was your first step. Today is your stillness.
-True growth doesn’t begin with action. It begins with awareness.
-Before walking forward, you must know where you are standing. This is not weakness. This is wisdom.
-THE GROUND BENEATH YOU
-Gently ask yourself:
-Where am I mentally? Where am I spiritually? Where am I emotionally? What have I been avoiding? What truth have I refused to admit? Which part of me is exhausted? Which part of me still believes things can get better?
-Let the answers rise slowly. There is no rush here.
-You’re not here to fix anything today. Just to see clearly.
-A MOMENT OF CALM
-Step outside yourself for a moment. Watch your life from a distance, without judgment.
-What do you see?
-A human being who wants to change. A heart trying to return to its Lord. Someone who hasn’t given up.
-Let that truth settle gently.
+Yesterday was your step. Today is stillness. True growth begins with awareness — seeing where you stand.
 TODAY’S REFLECTION
-Ask:
-“What part of me needs compassion right now?”
-Let the answer come — even if it’s a single word.`
+Ask: “Which part of me needs compassion right now?”`
   }
+  // <- paste day 3..30..90 objects here
 ];
 
 /* ---------- storage keys ---------- */
@@ -64,102 +55,124 @@ const KEY_UNLOCKED = 'ag_unlocked';
 const KEY_LAST_UNLOCK = 'ag_lastUnlockTs';
 const KEY_NOTE = d => `ag_note_day_${d}`;
 
-/* ---------- DOM refs (will be assigned after DOMContentLoaded) ---------- */
-let home, journal, day, about;
-let beginBtn, openJournal, aboutBtn;
-let daysList, backBtn, dayTitle;
-let ayahArabic, ayahTrans, dayContent;
-let note, saveNote, clearNote;
-let unlockNext, unlockInfo, homeBtn;
+/* ---------- DOM ---------- */
+let home, journal, dayView, about, privacy;
+let beginBtn, openJournal, aboutBtn, journalBtn, privacyBtn;
+let daysList, backBtn, dayTitle, ayahArabic, ayahTrans, dayContent;
+let note, saveNote, clearNote, unlockNext, unlockInfo, homeBtn;
+let didYouKnowBox, didYouKnowText, homeDidYouKnow, dykText;
+let shareBtn;
 
 let currentDay = 1;
 
-/* ---------- helpers ---------- */
-function el(id){ return document.getElementById(id); }
-function safeAddListener(elm, ev, fn){
-  if(!elm) return console.warn('Missing element for listener:', ev, elm);
-  elm.addEventListener(ev, fn);
-}
-
 /* ---------- init ---------- */
 document.addEventListener('DOMContentLoaded', ()=>{
-  // assign DOM refs now (after DOM is ready)
-  home = el('home'); journal = el('journal'); day = el('day'); about = el('about');
+  // DOM
+  home = el('home'); journal = el('journal'); dayView = el('day'); about = el('about'); privacy = el('privacy');
   beginBtn = el('beginBtn'); openJournal = el('openJournal'); aboutBtn = el('aboutBtn');
+  journalBtn = el('journalBtn'); privacyBtn = el('privacyBtn');
   daysList = el('daysList'); backBtn = el('backBtn'); dayTitle = el('dayTitle');
   ayahArabic = el('ayahArabic'); ayahTrans = el('ayahTrans'); dayContent = el('dayContent');
   note = el('note'); saveNote = el('saveNote'); clearNote = el('clearNote');
-  unlockNext = el('unlockNext'); unlockInfo = el('unlockInfo');
-  homeBtn = el('homeBtn');
+  unlockNext = el('unlockNext'); unlockInfo = el('unlockInfo'); homeBtn = el('homeBtn');
+  didYouKnowBox = el('didYouKnowBox'); didYouKnowText = el('didYouKnowText');
+  homeDidYouKnow = el('homeDidYouKnow'); dykText = el('dykText');
+  shareBtn = el('shareBtn');
 
-  // initialize storage keys if absent
+  // ensure storage
   if(!localStorage.getItem(KEY_UNLOCKED)){
     localStorage.setItem(KEY_UNLOCKED, '1');
-    localStorage.setItem(KEY_LAST_UNLOCK, Date.now().toString());
+    localStorage.setItem(KEY_LAST_UNLOCK, String(Date.now()));
   }
 
   bindUI();
-  showView('home');
   renderDays();
+  showView('home');
+  renderHomeDidYouKnow();
+  updateHeaderCounts();
 });
+
+/* ---------- helpers ---------- */
+function el(id){ return document.getElementById(id); }
+function safeAddListener(elm, ev, fn){ if(!elm) return; elm.addEventListener(ev, fn); }
 
 /* ---------- UI binding ---------- */
 function bindUI(){
   safeAddListener(beginBtn, 'click', ()=> { openDay(1); showView('day'); });
   safeAddListener(openJournal, 'click', ()=> { showView('journal'); });
+  safeAddListener(journalBtn, 'click', ()=> showView('journal'));
   safeAddListener(aboutBtn, 'click', ()=> showView('about'));
+  safeAddListener(privacyBtn, 'click', ()=> showView('privacy'));
   safeAddListener(backBtn, 'click', ()=> showView('journal'));
   safeAddListener(saveNote, 'click', saveCurrentNote);
   safeAddListener(clearNote, 'click', clearCurrentNote);
   safeAddListener(unlockNext, 'click', tryUnlockNext);
   safeAddListener(homeBtn, 'click', ()=> showView('home'));
+  safeAddListener(shareBtn, 'click', ()=> {
+    try { navigator.share && navigator.share({ title: dayTitle.textContent, text: stripHtml(dayContent.innerText) }); }
+    catch(e){ alert('Share not available on this device.'); }
+  });
 }
 
 /* ---------- view helpers ---------- */
 function showView(name){
-  // guard: ensure elements exist
-  [home,journal,day,about].forEach(s=>{
-    if(!s) return; 
-    s.classList.add('hidden');
-  });
+  [home,journal,dayView,about,privacy].forEach(s=>{ if(!s) return; s.classList.add('hidden'); });
   if(name==='home' && home) home.classList.remove('hidden');
   if(name==='journal' && journal) journal.classList.remove('hidden');
-  if(name==='day' && day) day.classList.remove('hidden');
+  if(name==='day' && dayView) dayView.classList.remove('hidden');
   if(name==='about' && about) about.classList.remove('hidden');
+  if(name==='privacy' && privacy) privacy.classList.remove('hidden');
 }
 
-/* ---------- render days list ---------- */
+/* ---------- rendering ---------- */
 function renderDays(){
   if(!daysList) return;
   daysList.innerHTML = '';
   const unlocked = Number(localStorage.getItem(KEY_UNLOCKED) || 1);
-  // safety: ensure daysData array exists
-  (daysData || []).forEach(d=>{
+  daysData.forEach(d=>{
     const t = document.createElement('div');
     t.className = 'day-tile' + (d.day>unlocked ? ' locked' : '');
-    t.textContent = `Day ${d.day}`;
+    t.innerHTML = `<div class="num">Day ${d.day}</div>
+                   <div class="title">${escapeHtml(d.title)}</div>
+                   <div class="preview">${escapeHtml(getPreview(d.text || d.didYouKnow || ''))}</div>`;
     if(d.day<=unlocked){
       t.addEventListener('click', ()=> { openDay(d.day); showView('day'); });
     } else {
-      t.title = 'This chapter is locked for now';
+      t.title = 'Locked — next unlock at 5:00 AM local time';
     }
     daysList.appendChild(t);
   });
+  updateHeaderCounts();
 }
+
+function renderHomeDidYouKnow(){
+  // try to show the first unlocked day's did-you-know
+  const unlocked = Number(localStorage.getItem(KEY_UNLOCKED) || 1);
+  const d = daysData.find(x=>x.day===unlocked) || daysData[0];
+  if(!d) return;
+  if(dykText) dykText.textContent = d.didYouKnow || (d.ayahTrans || '');
+  if(el('totalDays')) el('totalDays').textContent = String(daysData.length || 90);
+  if(el('unlockedCount')) el('unlockedCount').textContent = String(unlocked);
+}
+
+function updateHeaderCounts(){ if(el('unlockedCount')) el('unlockedCount').textContent = String(Number(localStorage.getItem(KEY_UNLOCKED) || 1)); }
 
 /* ---------- open day ---------- */
 function openDay(n){
   const unlocked = Number(localStorage.getItem(KEY_UNLOCKED) || 1);
   if(n>unlocked) return;
-  const data = (daysData || []).find(x=>x.day===n);
+  const data = daysData.find(x=>x.day===n);
   if(!data) return alert('Content not available yet.');
   currentDay = n;
-  if(dayTitle) dayTitle.textContent = `DAY ${data.day} — ${data.title}`;
-  if(ayahArabic) ayahArabic.textContent = data.ayahArabic || '';
-  if(ayahTrans) ayahTrans.textContent = data.ayahTrans || '';
-  if(dayContent) dayContent.innerHTML = formatText(data.text);
-  // load note
-  if(note) note.value = localStorage.getItem(KEY_NOTE(n)) || '';
+  dayTitle.textContent = `DAY ${data.day} — ${data.title}`;
+  // did you know
+  if(didYouKnowText) didYouKnowText.textContent = data.didYouKnow || '';
+  // ayah
+  ayahArabic.textContent = data.ayahArabic || '';
+  ayahTrans.textContent = data.ayahTrans || '';
+  dayContent.innerHTML = formatText(shortenForDisplay(data.text || '', 600));
+  // note
+  note.value = localStorage.getItem(KEY_NOTE(currentDay)) || '';
   updateUnlockUI();
 }
 
@@ -167,7 +180,7 @@ function openDay(n){
 function saveCurrentNote(){
   if(!note) return;
   localStorage.setItem(KEY_NOTE(currentDay), note.value);
-  alert('Saved locally on this device.');
+  toast('Saved locally on this device.');
 }
 function clearCurrentNote(){
   if(!note) return;
@@ -177,59 +190,122 @@ function clearCurrentNote(){
   }
 }
 
-/* ---------- unlock logic ---------- */
+/* ---------- unlock logic (5:00 AM rule) ---------- */
+/*
+  Rule:
+  - Store last unlock timestamp (ms) in ag_lastUnlockTs
+  - Next unlock allowed at the next 05:00 local time after lastUnlockTs
+  - If no lastUnlockTs: allow immediate (but then set lastUnlock)
+*/
+
+function getNext5amAfter(ts){
+  // returns ms timestamp of next occurrence of 05:00 local after given ts
+  const base = ts ? new Date(Number(ts)) : new Date();
+  // move to the day of base
+  let candidate = new Date(base);
+  candidate.setHours(5,0,0,0);
+  if(candidate.getTime() <= base.getTime()){
+    // if same or earlier, move to next day
+    candidate = new Date(candidate.getTime() + 24*60*60*1000);
+  }
+  return candidate.getTime();
+}
+
 function updateUnlockUI(){
   if(!unlockNext || !unlockInfo) return;
   const unlocked = Number(localStorage.getItem(KEY_UNLOCKED) || 1);
   const last = Number(localStorage.getItem(KEY_LAST_UNLOCK) || 0);
-  if(unlocked >= (daysData || []).length){
+  const total = daysData.length || 90;
+  if(unlocked >= total){
     unlockNext.style.display = 'none';
     unlockInfo.textContent = 'All chapters unlocked.';
     return;
   }
   const now = Date.now();
-  const ms24 = 24*60*60*1000;
-  if(now - last >= ms24){
+  const nextUnlockTs = getNext5amAfter(last || (now - 24*60*60*1000));
+  if(now >= nextUnlockTs){
     unlockNext.disabled = false;
     unlockNext.textContent = 'Unlock Next';
     unlockInfo.textContent = '';
   } else {
     unlockNext.disabled = true;
-    const hours = Math.ceil((ms24 - (now-last)) / (60*60*1000));
     unlockNext.textContent = 'Unlock Next';
-    unlockInfo.textContent = `Next unlock available in ~${hours} hour(s).`;
+    unlockInfo.textContent = `Next unlock: ${formatLocalDate(nextUnlockTs)} (5:00 AM)`;
   }
 }
 
 function tryUnlockNext(){
   const unlocked = Number(localStorage.getItem(KEY_UNLOCKED) || 1);
-  if(unlocked >= (daysData || []).length) return;
+  const total = daysData.length || 90;
+  if(unlocked >= total) return;
   const last = Number(localStorage.getItem(KEY_LAST_UNLOCK) || 0);
   const now = Date.now();
-  const ms24 = 24*60*60*1000;
-  if(now - last < ms24){
-    alert('Unlock not available yet. Come back later.');
+  const nextUnlockTs = getNext5amAfter(last || (now - 24*60*60*1000));
+  if(now < nextUnlockTs){
+    alert('Unlock not available yet. Come back at 5:00 AM local time.');
     return;
   }
+  // unlock
   localStorage.setItem(KEY_UNLOCKED, String(unlocked+1));
   localStorage.setItem(KEY_LAST_UNLOCK, String(now));
   renderDays();
   openDay(unlocked+1);
+  renderHomeDidYouKnow();
+  toast('New chapter unlocked — welcome.');
 }
 
-/* ---------- util ---------- */
+/* ---------- small utilities ---------- */
 function formatText(s){
   if(!s) return '';
   const parts = s.split(/\n{2,}/).map(p => `<p>${escapeHtml(p).replace(/\n/g,'<br>')}</p>`);
   return parts.join('');
 }
-function escapeHtml(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function escapeHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function getPreview(s){
+  if(!s) return '';
+  const plain = s.replace(/\r/g,'').replace(/\n+/g,' ').trim();
+  return plain.length>140 ? plain.slice(0,137)+'…' : plain;
+}
+function shortenForDisplay(s, max){
+  if(!s) return '';
+  return s.length>max ? escapeHtml(s.slice(0,max)) + '…' : escapeHtml(s);
+}
+function stripHtml(s){ return s.replace(/<\/?[^>]+(>|$)/g, ""); }
+function formatLocalDate(ts){
+  const d = new Date(Number(ts));
+  const opts = { year:'numeric', month:'short', day:'numeric', hour:'2-digit', minute:'2-digit' };
+  return d.toLocaleString(undefined, opts);
+}
 
-/* ---------- debug: owner helpers (only in console) ---------- */
+/* tiny toast */
+function toast(msg){
+  const t = document.createElement('div');
+  t.textContent = msg;
+  t.style.position='fixed'; t.style.right='18px'; t.style.bottom='18px';
+  t.style.background='rgba(0,0,0,0.8)'; t.style.color='#fff'; t.style.padding='10px 14px';
+  t.style.borderRadius='10px'; t.style.zIndex=9999; t.style.fontSize='14px';
+  document.body.appendChild(t);
+  setTimeout(()=> t.remove(),2200);
+}
+
+/* ---------- debug helpers ---------- */
 window.ag_forceUnlock = function(){
   const unlocked = Number(localStorage.getItem(KEY_UNLOCKED) || 1);
-  localStorage.setItem(KEY_UNLOCKED, String(Math.min(unlocked+1, (daysData || []).length)));
-  localStorage.setItem(KEY_LAST_UNLOCK, '0');
+  localStorage.setItem(KEY_UNLOCKED, String(Math.min(unlocked+1, daysData.length || 90)));
+  localStorage.setItem(KEY_LAST_UNLOCK, String(Date.now()));
   renderDays();
   alert('Forced unlock (debug).');
 };
+
+/* ---------- small initializers ---------- */
+function stripTimeFromDate(date){
+  const d = new Date(date);
+  d.setHours(0,0,0,0);
+  return d;
+}
+function renderInitial(){
+  // show first unlocked day's did-you-know on home
+  renderHomeDidYouKnow();
+  updateUnlockUI();
+}
+renderInitial();
