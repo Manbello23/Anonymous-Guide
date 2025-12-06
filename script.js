@@ -141,7 +141,6 @@ function bindUI(){
 /* ---------- view helpers ---------- */
 function showView(name){ [home,journal,dayView,about,privacy].forEach(s=>{ if(!s) return; s.classList.add('hidden'); }); if(name==='home' && home) home.classList.remove('hidden'); if(name==='journal' && journal) journal.classList.remove('hidden'); if(name==='day' && dayView) dayView.classList.remove('hidden'); if(name==='about' && about) about.classList.remove('hidden'); if(name==='privacy' && privacy) privacy.classList.remove('hidden'); }
 
-
 /* ---------- rendering ---------- */
 function renderDays(){
   if(!daysList) return;
@@ -188,7 +187,8 @@ function openDay(n){
   // ayah
   ayahArabic.textContent = data.ayahArabic || '';
   ayahTrans.textContent = data.ayahTrans || '';
-  dayContent.innerHTML = formatText(data.text || '');
+   dayContent.innerHTML = formatText(shortenForDisplay(data.text || '', 900));
+
   // note
   note.value = localStorage.getItem(KEY_NOTE(currentDay)) || '';
   updateUnlockUI();
