@@ -140,13 +140,21 @@ function bindUI(){
 
 /* ---------- view helpers ---------- */
 function showView(name){
-  [home,journal,dayView,about,privacy].forEach(s=>{ if(!s) return; s.classList.add('hidden'); });
-  if(name==='home' && home) home.classList.remove('hidden');
-  if(name==='journal' && journal) journal.classList.remove('hidden');
-  if(name==='day' && dayView) dayView.classList.remove('hidden');
-  if(name==='about' && about) about.classList.remove('hidden');
-  if(name==='privacy' && privacy) privacy.classList.remove('hidden');
+  const views = [home, journal, dayView, about, privacy];
+  views.forEach(v => {
+    if (!v) return;
+    v.classList.remove('active');
+  });
+
+  if(name === 'home') home.classList.add('active');
+  if(name === 'journal') journal.classList.add('active');
+  if(name === 'day') dayView.classList.add('active');
+  if(name === 'about') about.classList.add('active');
+  if(name === 'privacy') privacy.classList.add('active');
+
+  window.scrollTo(0, 0); // ensures each "page" starts at top
 }
+
 
 /* ---------- rendering ---------- */
 function renderDays(){
@@ -194,7 +202,7 @@ function openDay(n){
   // ayah
   ayahArabic.textContent = data.ayahArabic || '';
   ayahTrans.textContent = data.ayahTrans || '';
-  dayContent.innerHTML = formatText(shortenForDisplay(data.text || '', 600));
+  dayContent.innerHTML = formatText(data.text || '');
   // note
   note.value = localStorage.getItem(KEY_NOTE(currentDay)) || '';
   updateUnlockUI();
