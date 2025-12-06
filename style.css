@@ -105,14 +105,5 @@ textarea{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(0,0,0,
 .view.active {
   display: block;
 }
-/* ensure no invisible layer blocks clicks */
-.view {
-  position: relative;
-  z-index: 1;
-}
 
-.hero, .journal-wrap, .day-wrap, .about-card {
-  position: relative;
-  z-index: 2;
-}
 
