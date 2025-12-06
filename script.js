@@ -16,7 +16,7 @@ Each object:
   ayahArabic: "﴿ ... ﴾",
   ayahTrans: "translation..",
   didYouKnow: "Short fact related to the day.",
-  text: `Long content ...`
+  text: Long content ...
 }
 ---------------------------------------------------------------------------- */
 
@@ -27,7 +27,7 @@ const daysData = [
     ayahArabic: "﴿ بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيمِ ﴾",
     ayahTrans: "In the name of Allah, the Most Merciful, the Most Compassionate.",
     didYouKnow: "The very first revealed word in the Qur’an was “Iqra” — to read and awaken.",
-    text: `THE QUIET BEGINNING
+    text: THE QUIET BEGINNING
 Every meaningful journey starts softly — not with motivation, planning, or confidence… but with a small inward decision.
 Maybe you feel tired. Maybe lost. Maybe your heart whispered, “It’s time.”
 You didn’t arrive here by accident. Something within you refused to stay where you were.
@@ -37,7 +37,7 @@ This journal isn’t about perfection. It’s about beginning.
 For today, one step is enough.
 TODAY’S REFLECTION
 Ask: “What am I running from — and what am I moving toward?”. 
-Keep your answer honest. Honesty is the first form of strength.`
+Keep your answer honest. Honesty is the first form of strength.
   },
   {
     day: 2,
@@ -45,7 +45,7 @@ Keep your answer honest. Honesty is the first form of strength.`
     ayahArabic: "﴿ إِنَّ اللَّهَ مَعَ الصَّابِرِينَ ﴾",
     ayahTrans: "Indeed, Allah is with the patient.",
     didYouKnow: "The heart appears many times in the Qur’an — it is where reminders settle.",
-    text: `TTHE CALL BACK
+    text: TTHE CALL BACK
 We lose ourselves quietly — in routines, fears, expectations, and noise.
 But returning to yourself begins just as quietly — with awareness. With noticing. With the simple willingness to stop running.
 THE INNER TURNING
@@ -53,7 +53,7 @@ Your heart is softer than you think. It responds to truth. It responds to si
 Today is not about becoming someone new. It’s about coming back to who you were meant to be.
 TODAY’S REFLECTION
 Ask yourself: “Which part of me has been waiting for my attention?”
-Write it simply. Let awareness be your first return.`
+Write it simply. Let awareness be your first return.
   },
    {
       day: 3,
@@ -61,7 +61,7 @@ Write it simply. Let awareness be your first return.`
     ayahArabic: "﴿ أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ ﴾",
     ayahTrans: "Verily, in the remembrance of Allah hearts find rest.",
     didYouKnow: "Allah swears by time in Surah Al-Asr — reminding us that loss begins when life becomes rushed.",
-    text: `THE RUSH INSIDE YOU
+    text: THE RUSH INSIDE YOU
 You may feel behind. You may feel pressured to be more, heal faster, do everything.
 But the soul doesn’t grow under pressure. It grows in stillness.
 THE SACRED PAUSE
@@ -69,7 +69,7 @@ Slowing down doesn’t mean you’re weak. It means you’re listening. It m
 Give yourself permission to breathe today — to be here, not elsewhere.
 TODAY’S REFLECTION
 Ask softly: “What can I slow down today, even slightly?”
-Small pauses create space for healing.`
+Small pauses create space for healing.
 }
   // <- paste day 3..30..90 objects here
 ];
@@ -77,7 +77,7 @@ Small pauses create space for healing.`
 /* ---------- storage keys ---------- */
 const KEY_UNLOCKED = 'ag_unlocked';
 const KEY_LAST_UNLOCK = 'ag_lastUnlockTs';
-const KEY_NOTE = d => `ag_note_day_${d}`;
+const KEY_NOTE = d => ag_note_day_${d};
 
 /* ---------- DOM ---------- */
 let home, journal, dayView, about, privacy;
@@ -139,7 +139,14 @@ function bindUI(){
 }
 
 /* ---------- view helpers ---------- */
-function showView(name){ [home,journal,dayView,about,privacy].forEach(s=>{ if(!s) return; s.classList.add('hidden'); }); if(name==='home' && home) home.classList.remove('hidden'); if(name==='journal' && journal) journal.classList.remove('hidden'); if(name==='day' && dayView) dayView.classList.remove('hidden'); if(name==='about' && about) about.classList.remove('hidden'); if(name==='privacy' && privacy) privacy.classList.remove('hidden'); }
+function showView(name){
+  [home,journal,dayView,about,privacy].forEach(s=>{ if(!s) return; s.classList.add('hidden'); });
+  if(name==='home' && home) home.classList.remove('hidden');
+  if(name==='journal' && journal) journal.classList.remove('hidden');
+  if(name==='day' && dayView) dayView.classList.remove('hidden');
+  if(name==='about' && about) about.classList.remove('hidden');
+  if(name==='privacy' && privacy) privacy.classList.remove('hidden');
+}
 
 /* ---------- rendering ---------- */
 function renderDays(){
@@ -149,9 +156,9 @@ function renderDays(){
   daysData.forEach(d=>{
     const t = document.createElement('div');
     t.className = 'day-tile' + (d.day>unlocked ? ' locked' : '');
-    t.innerHTML = `<div class="num">Day ${d.day}</div>
+    t.innerHTML = <div class="num">Day ${d.day}</div>
                    <div class="title">${escapeHtml(d.title)}</div>
-                   <div class="preview">${escapeHtml(getPreview(d.text || d.didYouKnow || ''))}</div>`;
+                   <div class="preview">${escapeHtml(getPreview(d.text || d.didYouKnow || ''))}</div>;
     if(d.day<=unlocked){
       t.addEventListener('click', ()=> { openDay(d.day); showView('day'); });
     } else {
@@ -181,14 +188,13 @@ function openDay(n){
   const data = daysData.find(x=>x.day===n);
   if(!data) return alert('Content not available yet.');
   currentDay = n;
-  dayTitle.textContent = `DAY ${data.day} — ${data.title}`;
+  dayTitle.textContent = DAY ${data.day} — ${data.title};
   // did you know
   if(didYouKnowText) didYouKnowText.textContent = data.didYouKnow || '';
   // ayah
   ayahArabic.textContent = data.ayahArabic || '';
   ayahTrans.textContent = data.ayahTrans || '';
-   dayContent.innerHTML = formatText(shortenForDisplay(data.text || '', 900));
-
+  dayContent.innerHTML = formatText(shortenForDisplay(data.text || '', 600));
   // note
   note.value = localStorage.getItem(KEY_NOTE(currentDay)) || '';
   updateUnlockUI();
@@ -248,7 +254,7 @@ function updateUnlockUI(){
   } else {
     unlockNext.disabled = true;
     unlockNext.textContent = 'Unlock Next';
-    unlockInfo.textContent = `Next unlock: ${formatLocalDate(nextUnlockTs)} (5:00 AM)`;
+    unlockInfo.textContent = Next unlock: ${formatLocalDate(nextUnlockTs)} (5:00 AM);
   }
 }
 
@@ -275,7 +281,7 @@ function tryUnlockNext(){
 /* ---------- small utilities ---------- */
 function formatText(s){
   if(!s) return '';
-  const parts = s.split(/\n{2,}/).map(p => `<p>${escapeHtml(p).replace(/\n/g,'<br>')}</p>`);
+  const parts = s.split(/\n{2,}/).map(p => <p>${escapeHtml(p).replace(/\n/g,'<br>')}</p>);
   return parts.join('');
 }
 function escapeHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
@@ -326,4 +332,5 @@ function renderInitial(){
   renderHomeDidYouKnow();
   updateUnlockUI();
 }
-renderInitial();
+renderInitial();)
+ChatGPT
