@@ -36,8 +36,7 @@ Allah places gentle moments in our lives — moments that say: Rise. Not lou
 This journal isn’t about perfection. It’s about beginning.
 For today, one step is enough.
 TODAY’S REFLECTION
-Ask: “What am I running from — and what am I moving toward?”
-Keep your answer honest. Honesty is the first form of strength.`
+Ask: “What am I running from — and what am I moving toward?”. Keep your answer honest. Honesty is the first form of strength.`
   },
   {
     day: 2,
