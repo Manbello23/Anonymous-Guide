@@ -332,5 +332,4 @@ function renderInitial(){
   renderHomeDidYouKnow();
   updateUnlockUI();
 }
-renderInitial();)
-ChatGPT
+renderInitial();
