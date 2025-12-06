@@ -97,3 +97,22 @@ textarea{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(0,0,0,
   .days-list{grid-template-columns:repeat(2,1fr)}
   .hero-title{font-size:28px}
 }
+/* ENSURE ONLY ONE VIEW SHOWS */
+.view {
+  display: none;
+}
+
+.view.active {
+  display: block;
+}
+/* ensure no invisible layer blocks clicks */
+.view {
+  position: relative;
+  z-index: 1;
+}
+
+.hero, .journal-wrap, .day-wrap, .about-card {
+  position: relative;
+  z-index: 2;
+}
+
