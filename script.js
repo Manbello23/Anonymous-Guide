@@ -367,17 +367,68 @@ TODAY’S REFLECTION
 Write: “I can see myself growing in the way I ______.”`
   },
     26: {
-     title: "MEETING THE NEW VERSION OF YOURSELF",
-    fact: "Allah says He will guide you and improve your state.",
-    ayah_ar: "سَيَهْدِيهِمْ وَيُصْلِحُ بَالَهُمْ",
-    ayah_trans: "He will guide them and improve their state. — Qur’an 47:5",
-    text: `YOU ARE NOT WHO YOU WERE
-You’re softer now. More aware. More honest with yourself. More connected to Allah.
-A new version of you is forming.
-THE BEAUTIFUL REALITY
-Growth doesn’t announce itself — it appears in how you think, react, breathe, hope.
+     title: "BEING GENTLE WITH YOURSELF AS YOU CONTINUE",
+    fact: "Allah praises gentleness — even in dealing with yourself.",
+    ayah_ar: "فَبِمَا رَحْمَةٍ مِّنَ اللَّهِ لِنتَ لَهُمْ",
+    ayah_trans: "By Allah’s mercy, you were gentle with them. — Qur’an 3:159",
+    text: `WHY GENTLENESS MATTERS
+As you grow, your heart becomes vulnerable. It becomes sensitive and aware.
+This is the moment to treat yourself with softness — not pressure.
+THE MERCY YOU OWE YOURSELF
+Say to yourself: “I’m learning. I’m growing. I deserve kindness.”
 TODAY’S REFLECTION
-Write: “I can see myself growing in the way I ______.”`
+Write: “Today, I choose to be gentle with myself in ______.”`
+  },
+   27: {
+     title: "REBUILDING THE RELATIONSHIP WITH YOURSELF",
+    fact: "Allah knows the whispers of your soul — meaning even your unspoken needs matter.",
+    ayah_ar: "نَعْلَمُ مَا تُوَسْوِسُ بِهِ نَفْسُهُ",
+    ayah_trans: "We know what his soul whispers within him. — Qur’an 50:16",
+    text: `A RELATIONSHIP YOU NEGLECT
+You care for others. You show up for responsibilities. But you often abandon yourself.
+It’s time to rebuild that relationship with compassion.
+RETURNING TO YOURSELF
+Self-respect is part of faith. Honesty with yourself is worship.
+TODAY’S REFLECTION
+Write: “The part of myself I want to rebuild my relationship with is ______.”`
+  },
+    28: {
+     title: "LEARNING TO PAUSE BEFORE YOU REACT",
+    fact: "The Qur’an praises those who restrain anger — a reminder that pausing is a spiritual act.",
+    ayah_ar: "وَالْكَاظِمِينَ الْغَيْظَ",
+    ayah_trans: "…those who restrain their anger… — Qur’an 3:134",
+    text: `THE SACRED PAUSE
+Between emotion and reaction lies a small space — and that space can change everything.
+One breath. One pause. One act of clarity.
+THE POWER OF STILLNESS
+Pausing is not weakness. It is mastery over yourself.
+TODAY’S REFLECTION
+Write: “The reaction I want to replace with a pause is ______.”`
+  },
+     29: {
+     title: "PLANTING SMALL SEEDS OF CONSISTENCY",
+    fact: "Paradise is described as a place of gardens — a reminder that spiritual growth begins with planting seeds.",
+    ayah_ar: "لَنُبَوِّئَنَّهُم مِّنَ الْجَنَّةِ غُرَفًا",
+    ayah_trans: "We will settle them in elevated rooms of Paradise… — Qur’an 29:58",
+    text: `THE TRUTH OF GROWTH
+Greatness is quiet. Transformation is gradual. Consistency is the seed of lasting change.
+THE SMALL SEED
+Choose one small act today. One seed. One step toward who you want to become.
+TODAY’S REFLECTION
+Write: “The small seed of consistency I want to plant is ______.”`
+  },
+    30: {
+     title: "TRUSTING THE SLOW UNFOLDING",
+    fact: "Tawakkul (trust in Allah) is mentioned repeatedly in the Qur’an — because trust is the heart of every journey.",
+    ayah_ar: "وَتَوَكَّلْ عَلَى اللَّهِ",
+    ayah_trans: "And rely upon Allah.” — Qur’an 33:3",
+    text: `THE PATIENCE WITH PROCESS
+You may not feel “transformed” — but change is happening slowly, quietly, deeply.
+Transformation is an unfolding, not a rush.
+THE SURRENDER
+Allah sees every intention, every effort, every struggle. Trust that nothing is wasted.
+TODAY’S REFLECTION
+Write: “Today, I choose to trust Allah with ______.”`
   },
 };
 
