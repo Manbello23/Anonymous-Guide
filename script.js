@@ -59,6 +59,66 @@ TODAY’S REFLECTION
 Ask softly: “What can I slow down today, even slightly?”
 Small pauses create space for healing.`
   },
+   4: {
+     title: "ACCEPTING WHERE YOU ARE",
+    fact: "In the Qur’an, Allah describes Himself as Al-Latīf — The Subtly Kind — the One who works within your life in ways you don’t always see.",
+    ayah_ar: "مَا قَدَرُوا اللَّهَ حَقَّ قَدْرِهِ",
+    ayah_trans: "They did not recognize Allah as He deserves to be recognized. — Qur’an 39:67",
+    text: `THE TRUTH OF YOUR MOMENT
+You are exactly where you’re meant to be — not as a limitation, but as a lesson.
+Growth doesn’t start with change. It starts with acceptance.
+This moment, with its imperfections, is part of Allah’s design for you.
+THE GIFT OF NOW
+Stop fighting the moment you’re in. Lean into it. Listen to it. There is a message here — subtle but real.
+TODAY’S REFLECTION
+Ask: “What is this moment trying to teach me?”
+Let the answer reveal itself gently.`
+  },
+   5: {
+     title: "THE FIRST QUIET PROMISE TO YOURSELF",
+    fact: "Every Prophet began their mission with something small — a whisper, a moment, a single command. Greatness begins tiny.",
+    ayah_ar: "وَعِبَادُ الرَّحْمَٰنِ الَّذِينَ يَمْشُونَ عَلَى الْأَرْضِ هَوْنًا",
+    ayah_trans: "And the servants of the Most Merciful walk upon the earth gently. — Qur’an 25:63",
+    text: `THE SOFT BEGINNING OF COMMITMENT
+Yesterday you formed your intention. Today is about something just as gentle — a small promise to yourself.
+Not loud. Not heavy. Not overwhelming.
+Just meaningful.
+WHY IT MATTERS
+A promise to yourself says: “I am worth showing up for.”
+It’s not about perfection — it’s about dignity.
+THE MOMENT OF TRUTH
+Ask yourself: “What tiny, realistic promise can I keep today?”
+Let it be light. Let it be human. Let it be yours.
+TODAY’S REFLECTION
+Complete: “My small promise to myself today is ______.”
+This is how transformation begins — quietly.`
+  },
+    6: {
+     title: "THE WEIGHT YOU DON'T TALK ABOUT",
+    fact: "In Surah Ad-Duha, Allah reminds the Prophet ﷺ of three blessings before giving him any commands — teaching us that healing starts with reassurance, not pressure.",
+    ayah_ar: "مَا وَدَّعَكَ رَبُّكَ وَمَا قَلَىٰ",
+    ayah_trans: "Your Lord has not abandoned you, nor has He disliked you. — Qur’an 93:3",
+    text: `THE UNSEEN BURDEN
+Everybody carries a weight no one else sees. A fear. A regret. A memory. A quiet ache.
+You’re not weak for feeling it. You’re human.
+THE MERCY IN ACKNOWLEDGING IT
+Allah sees every heaviness you don’t speak of. Sometimes the first healing isn’t releasing the burden — it’s admitting you’re carrying it.
+TODAY’S REFLECTION
+Ask: “What weight have I been pretending isn’t heavy?” Write it gently. Name it without shame.`
+  },
+   7: {
+     title: "WHEN YOUR HEART FEELS UNCLEAR",
+    fact: "The word Basīrah (inner clarity) appears repeatedly in the Qur’an — meaning a type of sight that comes from the heart, not the eyes.",
+    ayah_ar: "فَإِنَّهَا لَا تَعْمَى الْأَبْصَارُ وَلَٰكِن تَعْمَى الْقُلُوبُ",
+    ayah_trans: "It is not the eyes that go blind, but the hearts. — Qur’an 22:46",
+    text: `WHEN CONFUSION SETS IN
+Sometimes you don’t know what you feel. You don’t know what you want. You don’t know what your next step should be.
+This is not failure — it’s a sign that your heart is rearranging itself.
+THE BEGINNING OF CLARITY
+Clarity isn’t forced. It arrives when the heart becomes quiet enough to hear itself again.
+TODAY’S REFLECTION
+Ask: “What is one thing I’m unsure about — and what might Allah be teaching me through this uncertainty?”`
+  },
 };
 
 for (let i = 4; i <= 90; i++) {
