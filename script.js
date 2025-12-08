@@ -664,6 +664,83 @@ document.getElementById("openJournal").onclick = () => {
   renderDaysList();
   showView("journal");
 };
+/* ---------- NOTES PAGE HANDLER ---------- */
+
+function listSavedNotes(){
+  const listEl = document.getElementById('notesList');
+  if(!listEl) return;
+  listEl.innerHTML = '';
+  // gather keys that match KEY_NOTE(n)
+  const notes = [];
+  for(let i=1;i<=TOTAL_DAYS;i++){
+    const k = `note_day_${i}`;
+    const v = localStorage.getItem(k);
+    if(v && v.trim().length){
+      notes.push({day:i, text: v});
+    }
+  }
+  if(notes.length === 0){
+    listEl.innerHTML = '<div class="muted">No notes yet. Save reflections from any day and they will appear here.</div>';
+    return;
+  }
+  notes.forEach(n => {
+    const it = document.createElement('div');
+    it.className = 'note-item';
+    it.innerHTML = `<div class="meta">Day ${n.day}</div>
+                    <div class="content">${escapeHtml(n.text)}</div>
+                    <div class="note-controls">
+                      <button class="btn small" data-day="${n.day}" onclick="editNote(this)">Edit</button>
+                      <button class="btn ghost small" data-day="${n.day}" onclick="deleteNote(this)">Delete</button>
+                    </div>`;
+    listEl.appendChild(it);
+  });
+}
+
+window.editNote = function(btn){
+  const day = Number(btn.getAttribute('data-day'));
+  openDay(day);
+  // focus the textarea so user can edit
+  setTimeout(()=> {
+    const ta = document.getElementById('note');
+    if(ta) { ta.focus(); ta.scrollIntoView({behavior:'smooth', block:'center'}); }
+  }, 120);
+};
+
+window.deleteNote = function(btn){
+  const day = Number(btn.getAttribute('data-day'));
+  if(!confirm(`Delete note for Day ${day}? This cannot be undone.`)) return;
+  localStorage.removeItem(`note_day_${day}`);
+  listSavedNotes();
+  renderDaysList();
+};
+
+document.getElementById('notesBtn')?.addEventListener('click', ()=>{
+  listSavedNotes();
+  showView('notes');
+});
+
+document.getElementById('exportNotes')?.addEventListener('click', ()=>{
+  // copy all notes as JSON to clipboard
+  const out = {};
+  for(let i=1;i<=TOTAL_DAYS;i++){
+    const k = `note_day_${i}`;
+    const v = localStorage.getItem(k);
+    if(v) out[`day_${i}`] = v;
+  }
+  navigator.clipboard?.writeText(JSON.stringify(out, null, 2)).then(()=> {
+    alert('Notes copied to clipboard (JSON).');
+  }).catch(()=> alert('Unable to copy — try manually.'));
+});
+
+document.getElementById('clearAllNotes')?.addEventListener('click', ()=>{
+  if(!confirm('Remove ALL saved notes from this device?')) return;
+  for(let i=1;i<=TOTAL_DAYS;i++){
+    localStorage.removeItem(`note_day_${i}`);
+  }
+  listSavedNotes();
+  renderDaysList();
+});
+function escapeHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 
 /* -----------------------------------------------------------
    INIT
