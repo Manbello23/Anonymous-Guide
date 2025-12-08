@@ -49,5 +49,10 @@ html, body {
   max-height: 100vh;
   padding-bottom: 40px;
 }
+.view {
+  overflow-y: auto;
+  height: 100%;
+}
+
 
 
