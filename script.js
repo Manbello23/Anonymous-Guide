@@ -740,7 +740,6 @@ document.getElementById('clearAllNotes')?.addEventListener('click', ()=>{
   listSavedNotes();
   renderDaysList();
 });
-function escapeHtml(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 
 /* -----------------------------------------------------------
    INIT
