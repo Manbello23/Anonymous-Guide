@@ -11,34 +11,53 @@ const KEY_LAST_UNLOCK = "lastUnlockTs";
 // --- DAYS (1–30 inserted, 31–90 placeholder) ---
 const DAYS = {
   1: {
-    fact: "Studies show that people who pause for 60 seconds before starting a task perform significantly better.",
-    ayah_ar: "فَإِنَّ مَعَ الْعُسْرِ يُسْرًا",
-    ayah_trans: "Indeed, with hardship comes ease. (Qur'an 94:6)",
-    text: `Today marks the quiet beginning of your 90-day return to presence. 
-You don’t need strength, discipline, or motivation — just honesty. 
-This journey isn't about “fixing” yourself, but rediscovering the calm you already carry.
-
-Your only task today: slow down for one minute. Notice your breath.  
-Nothing more.`
+     title: "THE FIRST STEP",
+    fact: "The very first word revealed in the Qur’an was “Iqra” — Read. A command not just to read text, but to awaken.",
+    ayah_ar: "بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيمِ ",
+    ayah_trans: "In the name of Allah, the Most Merciful, the Most Compassionate.",
+    text: `THE QUIET BEGINNING
+Every meaningful journey starts softly — not with motivation, planning, or confidence… but with a small inward decision.
+Maybe you feel tired. Maybe lost. Maybe your heart whispered, “It’s time.”
+You didn’t arrive here by accident. Something within you refused to stay where you were.
+THE AWAKENING
+Allah places gentle moments in our lives — moments that say: Rise. Not loudly. Not forcefully. Just… rise.
+This journal isn’t about perfection. It’s about beginning.
+For today, one step is enough.
+TODAY’S REFLECTION
+Ask: “What am I running from — and what am I moving toward?”
+Keep your answer honest. Honesty is the first form of strength.`
   },
 
   2: {
-    fact: "Neuroscientists found that the brain calms within seconds of writing feelings instead of thinking them.",
-    ayah_ar: "أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ",
-    ayah_trans: "Surely, in the remembrance of Allah do hearts find rest. (Qur'an 13:28)",
-    text: `When you write what weighs on your mind, it becomes lighter.  
-Today, write one sentence about what’s been sitting in your chest lately.  
-Don’t filter it. Don’t beautify it. Just write it as it arrives.`
+     title: "RETURNING TO YOURSELF",
+    fact: "The heart is mentioned over 100 times in the Qur’an — always as something that turns, softens, or awakens.",
+    ayah_ar: "إِنَّ فِي ذَٰلِكَ لَذِكْرَى لِّمَن كَانَ لَهُ قَلْبٌ",
+    ayah_trans: "Surely in this is a reminder for whoever has a heart. — (Qur’an 50:37)",
+    text: `THE CALL BACK
+We lose ourselves quietly — in routines, fears, expectations, and noise.
+But returning to yourself begins just as quietly — with awareness. With noticing. With the simple willingness to stop running.
+THE INNER TURNING
+Your heart is softer than you think. It responds to truth. It responds to sincerity. It responds to Allah.
+Today is not about becoming someone new. It’s about coming back to who you were meant to be.
+TODAY’S REFLECTION
+Ask yourself: “Which part of me has been waiting for my attention?”
+Write it simply. Let awareness be your first return.`
   },
 
   3: {
-    fact: "Taking just one deep breath can lower your heart rate almost instantly.",
-    ayah_ar: "وَهُوَ مَعَكُمْ أَيْنَ مَا كُنتُمْ",
-    ayah_trans: "He is with you wherever you are. (Qur'an 57:4)",
-    text: `Today, breathe with intention.  
-Sit still for 30 seconds. Place one hand on your chest.  
-Feel the rise. Feel the fall.  
-This awareness is a doorway — step through it.`
+     title: "ALLOWING YOURSELF TO SLOWDOWN",
+    fact: "Allah swears by time in Surah Al-Asr — reminding us that loss begins when life becomes rushed.",
+    ayah_ar: "أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ",
+    ayah_trans: "Verily, in the remembrance of Allah hearts find rest. — Qur’an 13:28",
+    text: `THE RUSH INSIDE YOU
+You may feel behind. You may feel pressured to be more, heal faster, do everything.
+But the soul doesn’t grow under pressure. It grows in stillness.
+THE SACRED PAUSE
+Slowing down doesn’t mean you’re weak. It means you’re listening. It means you’re choosing presence over panic.
+Give yourself permission to breathe today — to be here, not elsewhere.
+TODAY’S REFLECTION
+Ask softly: “What can I slow down today, even slightly?”
+Small pauses create space for healing.`
   },
 };
 
