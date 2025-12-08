@@ -25,6 +25,7 @@
       <button id="journalBtn" class="nav-item">Journal</button>
       <button id="aboutBtn" class="nav-item">About</button>
       <button id="privacyBtn" class="nav-item ghost">Privacy</button>
+      <button id="notesBtn" class="nav-item">Notes</button>
     </nav>
   </header>
 
@@ -131,6 +132,24 @@
 
     </div>
   </section>
+
+  <!-- NOTES -->
+<section id="notes" class="view hidden">
+  <div class="notes-card">
+    <h2>Your Notes</h2>
+    <p class="muted">All notes saved on this device are shown here. Edit or delete as needed.</p>
+
+    <div id="notesList" class="notes-list">
+      <!-- JS will populate saved notes -->
+    </div>
+
+    <div style="margin-top:12px;">
+      <button id="exportNotes" class="btn outline">Export Notes (copy)</button>
+      <button id="clearAllNotes" class="btn ghost">Clear All Notes</button>
+    </div>
+  </div>
+</section>
+
 
   <!-- ABOUT -->
   <section id="about" class="view hidden">
