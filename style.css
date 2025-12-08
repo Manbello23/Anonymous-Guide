@@ -44,4 +44,10 @@ html, body {
   white-space: normal;
   line-height: 1.6;
 }
+#about, #privacy {
+  overflow-y: auto;
+  max-height: 100vh;
+  padding-bottom: 40px;
+}
+
 
