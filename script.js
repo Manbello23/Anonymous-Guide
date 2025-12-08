@@ -203,6 +203,182 @@ Nothing in your past can stop that.
 TODAY’S REFLECTION
 Ask: “What old story about myself am I finally ready to release?”`
   },
+   14: {
+     title: "BEING PRESENT WITH YOUR EMOTIONS",
+    fact: "Prophet Ya’qub (AS) expressed deep grief for years — showing that emotional honesty is not a lack of faith.",
+    ayah_ar: "وَابْيَضَّتْ عَيْنَاهُ مِنَ الْحُزْنِ",
+    ayah_trans: "His eyes turned white from grief. — Qur’an 12:84",
+    text: `YOUR FEELINGS ARE NOT WRONG
+Sadness. Fear. Loneliness. Uncertainty.
+You’re allowed to feel all of these. Faith doesn’t erase emotion — it holds it gently.
+HONOR WHAT’S INSIDE YOU
+The emotion you avoid grows louder. The emotion you face becomes softer.
+Let yourself feel today — without judgment.
+TODAY’S REFLECTION
+Ask: “What emotion have I been suppressing, and what is it trying to tell me?”`
+  },
+   15: {
+     title: "THE BEAUTY OF STARTING AGAIN",
+    fact: "The word Tawbah comes from a root meaning “to return” — and Allah loves those who return again and again.",
+    ayah_ar: "إِنَّ اللَّهَ يُحِبُّ التَّوَّابِينَ",
+    ayah_trans: "Indeed, Allah loves those who always return. — Qur’an 2:222",
+    text: `THE GIFT OF A NEW BEGINNING
+Maybe you slipped. Maybe you stopped. Maybe you broke your promise to yourself.
+It’s okay. Growth isn’t linear — it loops, rises, falls, restarts.
+THE DOOR THAT NEVER CLOSES
+Allah doesn’t get tired of you returning. So don’t get tired of returning to yourself.
+A new beginning is always one decision away.
+TODAY’S REFLECTION
+Ask: “What is one thing I want to restart — gently, without guilt?”`
+  },
+   16: {
+     title: "WHEN THE HEART FEELS HEAVY",
+    fact: "The Qur’an describes the heart as something that can feel burdened or tight — emotional heaviness is real, not imagined.",
+    ayah_ar: "وَضَاقَتْ عَلَيْهِمْ أَنفُسُهُمْ",
+    ayah_trans: "Their souls felt constricted within them. — Qur’an 9:118",
+    text: `THE WEIGHT YOU CAN’T EXPLAIN
+Some heaviness has no clear reason. It just sits inside you — quiet, dense, exhausting.
+This is not a sign of weakness. It’s a sign that your heart is asking for care.
+WHAT TO DO WITH THE WEIGHT
+You don’t need to fix everything today. You just need to hold yourself gently.
+Breathe. Slow down. Let the heaviness be acknowledged.
+TODAY’S REFLECTION
+Ask: “What heaviness am I carrying that I haven’t admitted to myself yet?”`
+  },
+   17: {
+     title: "PATIENCE WITH YOUR OWN PROCESS",
+    fact: "The Qur’an says humans were created impatient — meaning patience isn’t natural, it’s learned.",
+    ayah_ar: "خُلِقَ الإِنسَانُ مِنْ عَجَلٍ",
+    ayah_trans: "Humankind was created impatient.” — Qur’an 21:37",
+    text: `THE PRESSURE TO BE FURTHER
+Maybe you feel like you should be “better” by now. More disciplined. More spiritual. More stable.
+But growth doesn’t follow your expectations — it follows your readiness.
+THE GENTLE APPROACH
+Patience with yourself isn’t laziness. It is self-respect.
+You deserve time to grow.
+TODAY’S REFLECTION
+Ask: “In what part of my life do I need to be more patient with myself?”`
+  },
+   18: {
+     title: "HOLDING YOURSELF TO A KINDER STANDARD",
+    fact: "Allah describes Himself as Ar-Ra’ūf — The Most Compassionate — a reminder that compassion should begin with yourself.",
+    ayah_ar: "إِنَّ اللَّهَ بِالنَّاسِ لَرَءُوفٌ رَحِيمٌ",
+    ayah_trans: "Indeed, Allah is Compassionate and Merciful to mankind. — Qur’an 2:143",
+    text: `YOU EXPECT TOO MUCH FROM YOURSELF
+You demand perfection. You punish mistakes. You criticize yourself for being human.
+But harshness never builds growth — it suffocates it.
+THE BETTER STANDARD
+Treat yourself the way Allah treats you: with patience, mercy, and compassion.
+You deserve that softness.
+TODAY’S REFLECTION
+Write: “One unrealistic standard I want to release is ______.”`
+  },
+   19: {
+     title: "LISTENING TO THE NEEDS OF YOUR HEART",
+    fact: "The Qur’an calls the heart something that understands — meaning your heart has wisdom too.",
+    ayah_ar: "لَهُمْ قُلُوبٌ لَا يَفْقَهُونَ بِهَا",
+    ayah_trans: "They have hearts with which they do not understand. — Qur’an 7:179",
+    text: `YOU’VE BEEN IGNORING YOURSELF
+Your heart whispers long before it breaks. It tells you when you need rest, space, honesty, healing.
+But you often override it with logic, fear, or responsibility.
+THE ART OF LISTENING
+Sit with your heart today. What is it asking for? What has it been repeating quietly?
+Your heart knows what you need — you just need to listen.
+TODAY’S REFLECTION
+Ask: “What is my heart asking for that I’ve been avoiding?”`
+  },
+      20: {
+     title: "THE QUIET SHIFT WITHIN YOU",
+    fact: "Allah says He is closer to you than your jugular vein — meaning transformation can happen deep inside, even before you see it.",
+    ayah_ar: "وَنَحْنُ أَقْرَبُ إِلَيْهِ مِنْ حَبْلِ الْوَرِيدِ",
+    ayah_trans: "We are closer to him than his jugular vein. — Qur’an 50:16",
+    text: `SOMETHING IS CHANGING
+Maybe you don’t see huge results. Maybe your habits are still not perfect. Maybe your life still feels messy.
+But inside… something is shifting. A little more awareness. A little more sincerity. A little more softness.
+HONOR THE SHIFT
+Even the smallest spiritual change is valuable. It’s a sign your heart is waking up.
+TODAY’S REFLECTION
+Write: “One inner change I’ve noticed — even if small — is ______.”`
+  },
+     21: {
+     title: "RECOGNIZING THE SIGNS ALONG YOUR PATHS",
+    fact: "Allah says He will show signs “within yourselves” — not just in the world.",
+    ayah_ar: "سَنُرِيهِمْ آيَاتِنَا",
+    ayah_trans: "We will show them Our signs… — Qur’an 41:53",
+    text: `THE SIGNS YOU WALK PAST
+Guidance rarely comes loudly. It comes as a feeling, a thought, a shift, a door closing, a pull toward something better.
+These are signs — subtle, soft, intentional.
+THE ART OF SEEING
+To notice guidance, you don’t need more effort — you need more awareness.
+Pay attention: to what opens you, what drains you, what brings you closer to Allah.
+TODAY’S REFLECTION
+Write: “The sign I feel Allah has been showing me is ______.”`
+  },
+     22: {
+     title: "WHEN YOUR HEART BEGINS TO STRENGTHEN",
+    fact: "Allah describes the Qur’an as something that strengthens the heart.",
+    ayah_ar: "وَنُثَبِّتُ بِهِ فُؤَادَكَ",
+    ayah_trans: "That We may strengthen your heart through it. — Qur’an 25:32",
+    text: `THE UNSEEN STRENGTH
+Real strength isn’t loud. It arrives quietly — as patience, calmness, clarity.
+You may not feel strong, but you’re becoming more grounded inside.
+THE SHIFT
+You’re learning to rely on Allah spiritually — not emotionally or impulsively.
+This is real strength.
+TODAY’S REFLECTION
+Write: “The strength I feel emerging within me is ______.”`
+  },
+     23: {
+     title: "EMBRACING THE UNFINISHED PARTS OF YOU",
+    fact: "Humans were created weak — meaning imperfection is part of your design.",
+    ayah_ar: "خَلَقَ الْإِنسَانَ ضَعِيفًا",
+    ayah_trans: "Humankind was created weak. — Qur’an 4:28",
+    text: `THE REALITY OF GROWING
+You are still becoming. Still healing. Still learning yourself.
+Your weaknesses aren’t shameful — they’re pathways to Allah.
+THE GENTLE ACCEPTANCE
+Embrace the parts of you that are still messy or confused. Allah already knows them. He works through them.
+TODAY’S REFLECTION
+Write: “The unfinished part of me that deserves compassion is ______.”`
+  },
+     24: {
+     title: "THE QUEIT POWER OF CONSISTENCY",
+    fact: "Allah loves the deeds that are small but consistent.",
+    ayah_ar: "وَاعْبُدْ رَبَّكَ حَتَّىٰ يَأْتِيَكَ الْيَقِينُ",
+    ayah_trans: "Worship your Lord until certainty comes to you. — Qur’an 15:99",
+    text: `THE SECRET OF GROWTH
+Consistency matters more than intensity. Tiny actions, repeated daily, reshape your entire inner world.
+THE BEAUTY OF SMALL
+Do something small today — not impressive, not perfect, just sincere.
+TODAY’S REFLECTION
+Write: “The habit I want to grow with consistency is ______.”`
+  },
+     25: {
+     title: "MEETING THE NEW VERSION OF YOURSELF",
+    fact: "Allah says He will guide you and improve your state.",
+    ayah_ar: "سَيَهْدِيهِمْ وَيُصْلِحُ بَالَهُمْ",
+    ayah_trans: "He will guide them and improve their state. — Qur’an 47:5",
+    text: `YOU ARE NOT WHO YOU WERE
+You’re softer now. More aware. More honest with yourself. More connected to Allah.
+A new version of you is forming.
+THE BEAUTIFUL REALITY
+Growth doesn’t announce itself — it appears in how you think, react, breathe, hope.
+TODAY’S REFLECTION
+Write: “I can see myself growing in the way I ______.”`
+  },
+    26: {
+     title: "MEETING THE NEW VERSION OF YOURSELF",
+    fact: "Allah says He will guide you and improve your state.",
+    ayah_ar: "سَيَهْدِيهِمْ وَيُصْلِحُ بَالَهُمْ",
+    ayah_trans: "He will guide them and improve their state. — Qur’an 47:5",
+    text: `YOU ARE NOT WHO YOU WERE
+You’re softer now. More aware. More honest with yourself. More connected to Allah.
+A new version of you is forming.
+THE BEAUTIFUL REALITY
+Growth doesn’t announce itself — it appears in how you think, react, breathe, hope.
+TODAY’S REFLECTION
+Write: “I can see myself growing in the way I ______.”`
+  },
 };
 
 for (let i = 4; i <= 90; i++) {
