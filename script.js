@@ -119,6 +119,90 @@ Clarity isn’t forced. It arrives when the heart becomes quiet enough to hear
 TODAY’S REFLECTION
 Ask: “What is one thing I’m unsure about — and what might Allah be teaching me through this uncertainty?”`
   },
+   8: {
+     title: "THE BEAUTY IN SMALL EFFORTS",
+    fact: "The Prophet ﷺ said the most beloved actions to Allah are those done consistently, even if small.",
+    ayah_ar: "فَمَن يَعْمَلْ مِثْقَالَ ذَرَّةٍ خَيْرًا يَرَهُ",
+    ayah_trans: "Whoever does an atom’s weight of good will see it. — Qur’an 99:7",
+    text: `THE TRUTH ABOUT SMALL STEPS
+We admire big transformations, but your life changes through tiny choices repeated quietly.
+A small prayer. A small pause. A small kindness to yourself.
+These are not insignificant — they are seen.
+THE POWER OF GENTLE CONSISTENCY
+Small efforts build trust between you and you. They remind your heart it’s capable.
+TODAY’S REFLECTION
+Ask: “What is one tiny action I can repeat daily that will help me grow?”`
+  },
+    9: {
+     title: "FACING WHAT YOU AVOID",
+    fact: "Many du‘ā in the Qur’an begin with admitting weakness — showing that facing your struggles is a form of strength.",
+    ayah_ar: "رَبِّ إِنِّي مَسَّنِيَ الضُّرُّ وَأَنتَ أَرْحَمُ الرَّاحِمِينَ",
+    ayah_trans: "My Lord, I am touched by distress, and You are the Most Merciful. — Qur’an 21:83",
+    text: `THE THINGS YOU TURN AWAY FROM
+We all have something we avoid: A truth. A task. A memory. A responsibility. A feeling.
+Avoidance doesn’t make it disappear — it only delays your peace.
+THE COURAGE TO LOOK
+You don’t have to solve it today. Just face it. Open the door a little.
+That alone is transformation.
+TODAY’S REFLECTION
+Ask: “What have I been avoiding — and why?” Write with honesty, not pressure.`
+  },
+   10: {
+     title: "TRUSTING THE PROCESS, EVEN WHEN IT'S SLOW",
+    fact: "The Qur’an was revealed over 23 years, not instantly — to show us that meaningful transformation is gradual.",
+    ayah_ar: "وَعَسَىٰ أَن تَكْرَهُوا شَيْئًا وَهُوَ خَيْرٌ لَّكُمْ",
+    ayah_trans: "Perhaps you dislike something, yet it is good for you. — Qur’an 2:216",
+    text: `WHEN GROWTH FEELS TOO SLOW
+You may feel like nothing is changing. Like you’re doing the work, but your heart is not catching up. Like progress is invisible.
+But Allah grows things silently — flowers, hearts, destinies.
+TRUST THE PACE OF YOUR JOURNEY
+Slow progress is still progress. Slow steps are still steps. Slow healing is still healing.
+TODAY’S REFLECTION
+Ask: “What slow change in my life is actually moving me forward?”`
+  },
+   11: {
+     title: "WHEN YOU FEEL DISCONNECTED",
+    fact: "The Qur’an describes the heart as something that rusts — meaning spiritual distance can build slowly, without you noticing.",
+    ayah_ar: "كَلَّا بَلْ رَانَ عَلَىٰ قُلُوبِهِمْ",
+    ayah_trans: "No — their hearts have become rusted. — Qur’an 83:14",
+    text: `THE QUIET DISCONNECTION
+Some days, your heart feels far. Distant from Allah. Distant from yourself.
+You don’t feel spiritual. You don’t feel inspired. You don’t feel “present.”
+This isn’t a sign you’re failing — it’s a sign you’re human.
+THE WAY BACK
+Your heart doesn’t return through force. It returns through small moments of sincerity.
+A whispered du‘ā. A single ayah. A pause to breathe.
+TODAY’S REFLECTION
+Ask gently: “What is one small thing that helps me feel connected again?”`
+  },
+    12: {
+     title: "THE STRENGTH IN ASKING FOR HELP",
+    fact: "Every Prophet in the Qur’an made du‘ā — showing that asking Allah for help is not weakness, it is prophetic tradition.",
+    ayah_ar: "ادْعُونِي أَسْتَجِبْ لَكُمْ",
+    ayah_trans: "Call upon Me and I will respond to you. — Qur’an 40:60",
+    text: `YOUR SILENT STRUGGLES
+There are things you carry alone. Things you don’t speak about. Things you think you must handle yourself.
+But you weren’t created to carry life unsupported.
+THE HONOR IN ASKING
+Strength isn’t pretending. Strength is turning to Allah and saying: “I can’t do this alone.”
+Help doesn’t always change your situation, but it always changes you.
+TODAY’S REFLECTION
+Ask: “What is one thing I need to ask Allah’s help for — sincerely?”`
+  },
+    13: {
+     title: "LETTING GO OF OLD STORIES",
+    fact: "In the Qur’an, Allah often reminds people of past nations — not to trap them in history, but to show that stories can be rewritten.",
+    ayah_ar: "إِنَّ اللَّهَ لَا يُغَيِّرُ مَا بِقَوْمٍ",
+    ayah_trans: "Allah does not change a people until they change themselves. — Qur’an 13:11",
+    text: `THE STORIES YOU CARRY
+Your mind holds old narratives: “I always fail.” “I’m not enough.” “This is just who I am.”
+These stories feel real — but they are not destiny.
+THE FREEDOM OF REWRITING
+You can choose a new story today. A new belief. A new identity. A new way of being with yourself.
+Nothing in your past can stop that.
+TODAY’S REFLECTION
+Ask: “What old story about myself am I finally ready to release?”`
+  },
 };
 
 for (let i = 4; i <= 90; i++) {
