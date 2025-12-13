@@ -640,6 +640,40 @@ unlockNextBtn.onclick = () => {
     unlockInfo.textContent = "Next day unlocked!";
   }
 };
+function exportNotes() {
+  let content = "Anonymous Guide — Reflections\n\n";
+
+  let hasNotes = false;
+
+  for (let day = 1; day <= TOTAL_DAYS; day++) {
+    const note = localStorage.getItem(KEY_NOTE(day));
+    if (!note || !note.trim()) continue;
+
+    hasNotes = true;
+
+    content += `Day ${day}\n`;
+    content += `${note}\n\n`;
+    content += "-------------------------\n\n";
+  }
+
+  if (!hasNotes) {
+    alert("No notes to export yet.");
+    return;
+  }
+
+  const blob = new Blob([content], { type: "text/plain;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "anonymous-guide-notes.txt";
+  document.body.appendChild(a);
+  a.click();
+
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
 
 
 /* NAV */
@@ -651,6 +685,10 @@ document.getElementById("openJournal").onclick = () => showView("journal");
 document.getElementById("notesBtn").onclick = () => {
   renderNotesPage();
   showView("notes");
+   document.getElementById("exportNotesBtn").onclick = () => {
+  exportNotes();
+};
+
 };
 
 
