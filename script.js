@@ -443,6 +443,7 @@ for (let i = 31; i <=TOTAL_DAYS ; i++) {
 const views = {
   home: document.getElementById("home"),
   journal: document.getElementById("journal"),
+   notes: document.getElementById("notes"),
   day: document.getElementById("day")
 };
 
@@ -490,6 +491,7 @@ function setLastUnlockTs(ts) {
   localStorage.setItem(KEY_LAST_UNLOCK, ts);
 }
 
+
 function renderDaysList() {
   daysList.innerHTML = "";
   const unlocked = getUnlockedDay();
@@ -536,6 +538,34 @@ function openDay(day) {
 
   showView("day");
 }
+function renderNotesPage() {
+  const container = document.getElementById("notesList");
+  container.innerHTML = "";
+
+  let hasNotes = false;
+
+  for (let day = 1; day <= TOTAL_DAYS; day++) {
+    const note = localStorage.getItem(KEY_NOTE(day));
+    if (!note || !note.trim()) continue;
+
+    hasNotes = true;
+
+    const card = document.createElement("div");
+    card.className = "note-card";
+
+    card.innerHTML = `
+      <div class="note-day">Day ${day}</div>
+      <div class="note-text">${note.replace(/\n/g, "<br>")}</div>
+    `;
+
+    container.appendChild(card);
+  }
+
+  if (!hasNotes) {
+    container.innerHTML = `<p class="muted">No notes written yet.</p>`;
+  }
+}
+
 
 /* NOTES */
 document.getElementById("saveNote").onclick = () => {
@@ -554,6 +584,11 @@ document.getElementById("journalBtn").onclick = () => showView("journal");
 document.getElementById("backBtn").onclick = () => showView("journal");
 document.getElementById("beginBtn").onclick = () => openDay(1);
 document.getElementById("openJournal").onclick = () => showView("journal");
+document.getElementById("notesBtn").onclick = () => {
+  renderNotesPage();
+  showView("notes");
+};
+
 
 /* INIT */
 loadHomeDYK();
