@@ -430,25 +430,20 @@ TODAY’S REFLECTION
 Write: “Today, I choose to trust Allah with ______.”`
   },
 };
-/* Fill remaining days */
-for (let i = 4; i <= TOTAL_DAYS; i++) {
-    DAYS[i] = {
-        fact: "Your journey continues.",
-        ayah_ar: "",
-        ayah_trans: "",
-        text: `Content for Day ${i} will be added soon.`
-    };
+for (let i = 2; i <= TOTAL_DAYS; i++) {
+  DAYS[i] = {
+    fact: "Your journey continues.",
+    ayah_ar: "",
+    ayah_trans: "",
+    text: `Content for Day ${i} will be added soon.`
+  };
 }
 
-/* -----------------------------------------------------------
-   ELEMENTS
------------------------------------------------------------ */
-
+/* ELEMENTS */
 const views = {
-    home: document.getElementById("home"),
-    journal: document.getElementById("journal"),
-    day: document.getElementById("day"),
-    notes: document.getElementById("notes")
+  home: document.getElementById("home"),
+  journal: document.getElementById("journal"),
+  day: document.getElementById("day")
 };
 
 const dayTitle = document.getElementById("dayTitle");
@@ -461,240 +456,106 @@ const unlockNextBtn = document.getElementById("unlockNext");
 const unlockInfo = document.getElementById("unlockInfo");
 
 const homeDYK = [
-    "Your heart rate slows when you exhale longer than you inhale.",
-    "Writing thoughts reduces emotional intensity.",
-    "Quiet reflection strengthens inner calm."
+  "Writing thoughts reduces emotional intensity.",
+  "Quiet reflection strengthens clarity.",
+  "Slow breathing calms the nervous system."
 ];
 
-/* -----------------------------------------------------------
-   VIEW SWITCHER
------------------------------------------------------------ */
-
+/* VIEW SWITCH */
 function showView(view) {
-    Object.values(views).forEach(v => v.classList.add("hidden"));
-    views[view].classList.remove("hidden");
-
-    if (view === "notes") loadAllNotes();
+  Object.values(views).forEach(v => v.classList.add("hidden"));
+  views[view].classList.remove("hidden");
 }
 
-/* -----------------------------------------------------------
-   HOME
------------------------------------------------------------ */
-
+/* HOME */
 function loadHomeDYK() {
-    document.getElementById("dykText").textContent =
-        homeDYK[Math.floor(Math.random() * homeDYK.length)];
+  document.getElementById("dykText").textContent =
+    homeDYK[Math.floor(Math.random() * homeDYK.length)];
 }
 
-/* -----------------------------------------------------------
-   JOURNAL LIST
------------------------------------------------------------ */
-
+/* JOURNAL LIST */
 function getUnlockedDay() {
-    return Number(localStorage.getItem(KEY_UNLOCKED) || 1);
+  return Number(localStorage.getItem(KEY_UNLOCKED) || 1);
 }
 
-function setUnlockedDay(d) {
-    localStorage.setItem(KEY_UNLOCKED, d);
+function setUnlockedDay(day) {
+  localStorage.setItem(KEY_UNLOCKED, day);
 }
 
 function getLastUnlockTs() {
-    return Number(localStorage.getItem(KEY_LAST_UNLOCK) || 0);
+  return Number(localStorage.getItem(KEY_LAST_UNLOCK) || 0);
 }
 
 function setLastUnlockTs(ts) {
-    localStorage.setItem(KEY_LAST_UNLOCK, ts);
+  localStorage.setItem(KEY_LAST_UNLOCK, ts);
 }
 
 function renderDaysList() {
-    let unlocked = getUnlockedDay();
-    daysList.innerHTML = "";
+  daysList.innerHTML = "";
+  const unlocked = getUnlockedDay();
 
-    for (let day = 1; day <= TOTAL_DAYS; day++) {
-        const btn = document.createElement("button");
-        btn.className = "day-item";
+  for (let d = 1; d <= TOTAL_DAYS; d++) {
+    const btn = document.createElement("button");
+    btn.className = "day-item";
 
-        if (day <= unlocked) {
-            btn.textContent = `Day ${day}`;
-            btn.onclick = () => openDay(day);
-        } else {
-            btn.textContent = `Day ${day} — Locked`;
-            btn.classList.add("locked");
-        }
-
-        daysList.appendChild(btn);
+    if (d <= unlocked) {
+      btn.textContent = `Day ${d}`;
+      btn.onclick = () => openDay(d);
+    } else {
+      btn.textContent = `Day ${d} — Locked`;
+      btn.classList.add("locked");
     }
 
-    document.getElementById("unlockedCount").textContent = unlocked;
+    daysList.appendChild(btn);
+  }
+
+  document.getElementById("unlockedCount").textContent = unlocked;
 }
 
-/* -----------------------------------------------------------
-   UNLOCK SYSTEM
------------------------------------------------------------ */
-
-function initializeFirstUnlockIfNeeded(day) {
-    if (day !== 1) return;
-    if (getLastUnlockTs()) return;
-
-    const first = new Date();
-    first.setHours(5, 0, 0, 0);
-    setLastUnlockTs(first.getTime());
-}
-
-function tryUnlockNextDay() {
-    const last = getLastUnlockTs();
-    if (!last) return;
-
-    const now = new Date();
-    const nextUnlock = new Date(last);
-    nextUnlock.setDate(nextUnlock.getDate() + 1);
-
-    if (now.getTime() >= nextUnlock.getTime()) {
-        let unlocked = getUnlockedDay();
-        if (unlocked < TOTAL_DAYS) {
-            setUnlockedDay(unlocked + 1);
-
-            const next = new Date();
-            next.setHours(5, 0, 0, 0);
-            setLastUnlockTs(next.getTime());
-        }
-    }
-}
-
-/* -----------------------------------------------------------
-   OPEN DAY
------------------------------------------------------------ */
-
+/* OPEN DAY */
 let currentDay = 1;
 
 function openDay(day) {
-    currentDay = day;
+  currentDay = day;
 
-    initializeFirstUnlockIfNeeded(day);
-    tryUnlockNextDay();
+  const data = DAYS[day];
+  dayTitle.textContent = `Day ${day}`;
+  didYouKnowText.textContent = data.fact;
+  ayahArabic.textContent = data.ayah_ar;
+  ayahTrans.textContent = data.ayah_trans;
 
-    const data = DAYS[day];
+  dayContent.innerHTML = "";
+  data.text.split("\n").forEach(line => {
+    const p = document.createElement("p");
+    p.textContent = line;
+    dayContent.appendChild(p);
+  });
 
-    dayTitle.textContent = `Day ${day}`;
-    didYouKnowText.textContent = data.fact;
-    ayahArabic.textContent = data.ayah_ar;
-    ayahTrans.textContent = data.ayah_trans;
+  document.getElementById("note").value =
+    localStorage.getItem(KEY_NOTE(day)) || "";
 
-    dayContent.innerHTML = "";
-    data.text.split("\n").forEach(p => {
-        const el = document.createElement("p");
-        el.textContent = p;
-        dayContent.appendChild(el);
-    });
-
-    document.getElementById("note").value =
-        localStorage.getItem(KEY_NOTE(day)) || "";
-
-    const unlocked = getUnlockedDay();
-
-    if (day < unlocked) {
-        unlockNextBtn.disabled = true;
-        unlockInfo.textContent = "";
-    } else if (day === unlocked) {
-        unlockNextBtn.disabled = false;
-        unlockInfo.textContent = "Unlocks the next chapter.";
-    } else {
-        unlockNextBtn.disabled = true;
-        unlockInfo.textContent = "";
-    }
-
-    showView("day");
+  showView("day");
 }
 
-/* -----------------------------------------------------------
-   SAVE NOTES
------------------------------------------------------------ */
-
+/* NOTES */
 document.getElementById("saveNote").onclick = () => {
-    localStorage.setItem(KEY_NOTE(currentDay), document.getElementById("note").value);
-    alert("Saved.");
+  localStorage.setItem(KEY_NOTE(currentDay),
+    document.getElementById("note").value);
 };
 
 document.getElementById("clearNote").onclick = () => {
-    localStorage.removeItem(KEY_NOTE(currentDay));
-    document.getElementById("note").value = "";
+  localStorage.removeItem(KEY_NOTE(currentDay));
+  document.getElementById("note").value = "";
 };
 
-/* -----------------------------------------------------------
-   LOAD ALL NOTES PAGE
------------------------------------------------------------ */
-
-function loadAllNotes() {
-    const container = document.getElementById("allNotes");
-    container.innerHTML = "";
-
-    for (let day = 1; day <= TOTAL_DAYS; day++) {
-        const text = localStorage.getItem(KEY_NOTE(day));
-        if (text && text.trim() !== "") {
-            const box = document.createElement("div");
-            box.className = "info-section";
-            box.innerHTML = `<h3>Day ${day}</h3><p>${text}</p>`;
-            container.appendChild(box);
-        }
-    }
-}
-
-/* -----------------------------------------------------------
-   UNLOCK BUTTON
------------------------------------------------------------ */
-
-unlockNextBtn.onclick = () => {
-    const now = new Date();
-    const last = getLastUnlockTs();
-    const nextUnlock = new Date(last);
-    nextUnlock.setDate(nextUnlock.getDate() + 1);
-
-    if (now < nextUnlock) {
-        unlockInfo.textContent = "Next chapter unlocks at 5:00 AM.";
-        return;
-    }
-
-    tryUnlockNextDay();
-    renderDaysList();
-    unlockNextBtn.disabled = true;
-    unlockInfo.textContent = "Next chapter unlocked!";
-};
-
-/* -----------------------------------------------------------
-   NAVIGATION
------------------------------------------------------------ */
-
+/* NAV */
 document.getElementById("homeBtn").onclick = () => showView("home");
-document.getElementById("journalBtn").onclick = () => {
-    renderDaysList();
-    showView("journal");
-};
-document.getElementById("notesBtn").onclick = () => showView("notes");
+document.getElementById("journalBtn").onclick = () => showView("journal");
 document.getElementById("backBtn").onclick = () => showView("journal");
-
-document.getElementById("beginBtn").onclick = () => {
-    renderDaysList();
-    openDay(1);
-};
-
-document.getElementById("openJournal").onclick = () => {
-    renderDaysList();
-    showView("journal");
-};
+document.getElementById("beginBtn").onclick = () => openDay(1);
+document.getElementById("openJournal").onclick = () => showView("journal");
 
 /* INIT */
 loadHomeDYK();
 renderDaysList();
 showView("home");
-
-
-
-
-
-
-
-
-
-
-
-
