@@ -679,7 +679,17 @@ function exportNotes() {
 /* NAV */
 document.getElementById("homeBtn").onclick = () => showView("home");
 document.getElementById("journalBtn").onclick = () => showView("journal");
-document.getElementById("backBtn").onclick = () => showView("journal");
+document.getElementById("backBtn").onclick = () => {
+  const unlocked = getUnlockedDay();
+
+  // If there is a previous unlocked day, go to it
+  if (currentDay > 1 && currentDay - 1 <= unlocked) {
+    openDay(currentDay - 1);
+  } else {
+    // Fallback: go to journal
+    showView("journal");
+  }
+};
 document.getElementById("beginBtn").onclick = () => openDay(1);
 document.getElementById("openJournal").onclick = () => showView("journal");
 document.getElementById("notesBtn").onclick = () => {
