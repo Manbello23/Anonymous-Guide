@@ -597,6 +597,7 @@ unlockNextBtn.onclick = () => {
   // If current day is already behind unlocked progress
   if (currentDay < unlocked) {
     openDay(currentDay + 1);
+     window.scrollTo({ top: 0, behavior: "smooth" });
     return;
   }
 
