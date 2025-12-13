@@ -1,89 +1,166 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mindful 90 — Journal Journey</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Anonymous Guide — Beginning of a Beautiful Journey</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+<main id="app" class="app" role="main">
 
-    <!-- HEADER -->
-    <header>
-        <button id="homeBtn">Home</button>
-        <button id="journalBtn">Journal</button>
-        <button id="notesBtn">Notes</button>
-    </header>
+<header class="site-header">
+  <div class="brand-wrap">
+    <div class="brand">Anonymous Guide</div>
+    <div class="tag">Beginning of a Beautiful Journey</div>
+  </div>
 
-    <!-- HOME PAGE -->
-    <section id="home" class="view">
-        <h1>Mindful 90</h1>
-        <p class="subtitle">Your 90-Day Growth Journey</p>
+  <nav class="site-nav">
+    <button id="homeBtn" class="nav-item">Home</button>
+    <button id="journalBtn" class="nav-item">Journal</button>
+  </nav>
+</header>
 
-        <button id="beginBtn" class="big-btn">Begin the Journey</button>
-        <button id="openJournal" class="big-btn">Open Journal</button>
+<!-- HOME -->
+<section id="home" class="view">
 
-        <h3>Did You Know?</h3>
-        <p id="dykText" class="dyk"></p>
+  <div class="hero">
+    <div class="hero-left">
+      <h1 class="hero-title">Beginning of a<br/>Beautiful Journey</h1>
+      <p class="hero-sub">
+        A quiet 90-day guide to return your heart to what matters.
+        Read slowly. Reflect honestly.
+      </p>
 
-        <!-- MEDIUM SPACING -->
-        <div class="medium-space"></div>
+      <div class="actions">
+        <button id="beginBtn" class="btn primary large">Begin the Journey</button>
+        <button id="openJournal" class="btn outline large">Open Journal</button>
+      </div>
 
-        <!-- ABOUT SECTION -->
-        <div class="info-section">
-            <h2>About</h2>
-            <p>
-                Mindful 90 is a 90-day reflection and personal growth journal designed to help you build clarity, peace, and discipline — one day at a time.
-            </p>
+      <p class="home-note muted">
+        Not a quick-fix. Not instant. Just daily steps that return the heart.
+      </p>
+    </div>
+
+    <div class="hero-right">
+      <div class="home-card">
+        <div class="did-you-know">
+          <div class="dyk-label">Did you know?</div>
+          <div id="dykText" class="dyk-text"></div>
         </div>
 
-        <!-- PRIVACY SECTION -->
-        <div class="info-section">
-            <h2>Privacy</h2>
-            <p>
-                All your notes and journal progress are stored locally on your device only. Nothing is uploaded or shared anywhere.
-            </p>
+        <div class="home-stats">
+          <div>
+            <strong>90</strong>
+            <div class="muted">Days planned</div>
+          </div>
+          <div>
+            <strong id="unlockedCount">1</strong>
+            <div class="muted">Unlocked</div>
+          </div>
         </div>
-    </section>
 
-    <!-- JOURNAL PAGE -->
-    <section id="journal" class="view hidden">
-        <h1>Journal</h1>
-        <p>You have unlocked <span id="unlockedCount"></span> days.</p>
-        <div id="daysList"></div>
-    </section>
+        <div class="home-footer muted">
+          Daily chapters unlock at <strong>5:00 AM</strong> local time.<br/>
+          Notes are saved only on this device.
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <!-- DAY PAGE -->
-    <section id="day" class="view hidden">
-        <button id="backBtn" class="back-btn">← Back</button>
-        <h1 id="dayTitle"></h1>
+  <!-- ABOUT -->
+  <div class="about-card" style="margin-top:32px">
+    <h2>About This Journal</h2>
+    <p>
+      This journal is a quiet 90-day companion for reflection and inner clarity.
+      It is not meant to rush you, fix you, or overwhelm you.
+      Each day offers a small space to pause, read, and listen inwardly.
+      Progress here is gentle, honest, and personal.
+    </p>
+  </div>
 
-        <h3>Did You Know?</h3>
-        <p id="didYouKnowText"></p>
+  <!-- PRIVACY -->
+  <div class="about-card" style="margin-top:20px">
+    <h2>Privacy & Your Notes</h2>
+    <p>
+      Your reflections are private by design.
+      Notes are saved only in your browser on this device.
+      Nothing is uploaded, shared, or tracked.
+      Clearing your browser data will remove your notes.
+    </p>
+  </div>
 
-        <h3>Ayah</h3>
-        <p id="ayahArabic" class="ayah-ar"></p>
-        <p id="ayahTrans" class="ayah-trans"></p>
+</section>
 
-        <div id="dayContent" class="day-text"></div>
+<!-- JOURNAL -->
+<section id="journal" class="view hidden">
+  <div class="journal-head">
+    <h2>Journal</h2>
+    <p class="muted sub">
+      Open a day to read. Chapters unlock daily at 5:00 AM.
+    </p>
+  </div>
 
-        <h3>Your Notes</h3>
-        <textarea id="note" placeholder="Write your reflection here..."></textarea>
-        <button id="saveNote" class="note-btn">Save</button>
-        <button id="clearNote" class="note-btn">Clear</button>
+  <div class="journal-wrap">
+    <div id="daysList" class="days-list"></div>
+  </div>
+</section>
 
-        <button id="unlockNext" class="unlock-btn">Unlock Next</button>
-        <p id="unlockInfo" class="unlock-info"></p>
-    </section>
+<!-- DAY -->
+<section id="day" class="view hidden">
+  <div class="day-wrap">
 
-    <!-- NOTES PAGE -->
-    <section id="notes" class="view hidden">
-        <h1>Your Saved Notes</h1>
-        <p>All your written reflections appear here.</p>
-        <div id="allNotes"></div>
-    </section>
+    <div class="day-top">
+      <button id="backBtn" class="btn small ghost">◂ Back</button>
+      <div id="dayTitle" class="day-title"></div>
+      <div class="spacer"></div>
+    </div>
 
-    <script src="script.js"></script>
+    <article class="day-card">
+
+      <div class="did-you-know large">
+        <div class="dyk-label">Did you know?</div>
+        <div id="didYouKnowText" class="dyk-text"></div>
+      </div>
+
+      <div class="ayah-block">
+        <div id="ayahArabic" class="ayah-arabic"></div>
+        <div id="ayahTrans" class="ayah-trans muted"></div>
+      </div>
+
+      <div id="dayContent" class="day-content"></div>
+
+      <div class="reflection">
+        <label for="note"><strong>Your private reflection</strong></label>
+        <textarea id="note" rows="6" placeholder="Write quietly…"></textarea>
+
+        <div class="note-actions">
+          <button id="saveNote" class="btn primary">Save</button>
+          <button id="clearNote" class="btn ghost">Clear</button>
+        </div>
+
+        <div class="muted small">
+          Notes are saved locally on this device only.
+        </div>
+      </div>
+
+      <div class="unlock-row">
+        <button id="unlockNext" class="btn">Unlock Next</button>
+        <div id="unlockInfo" class="muted small"></div>
+      </div>
+
+    </article>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <small>He is with you wherever you are — Anonymous Guide</small>
+</footer>
+
+</main>
+<script src="script.js"></script>
 </body>
 </html>
