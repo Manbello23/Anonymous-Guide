@@ -569,14 +569,60 @@ function renderNotesPage() {
 
 /* NOTES */
 document.getElementById("saveNote").onclick = () => {
-  localStorage.setItem(KEY_NOTE(currentDay),
-    document.getElementById("note").value);
+  const val = document.getElementById("note").value.trim();
+  localStorage.setItem(KEY_NOTE(currentDay), val);
+
+  let msg = document.getElementById("saveMsg");
+  if (!msg) {
+    msg = document.createElement("div");
+    msg.id = "saveMsg";
+    msg.className = "muted small";
+    msg.style.marginTop = "6px";
+    document.querySelector(".note-actions").after(msg);
+  }
+
+  msg.textContent = "Reflection saved.";
+  setTimeout(() => (msg.textContent = ""), 2000);
 };
 
 document.getElementById("clearNote").onclick = () => {
   localStorage.removeItem(KEY_NOTE(currentDay));
   document.getElementById("note").value = "";
 };
+/* UNLOCK NEXT DAY */
+
+unlockNextBtn.onclick = () => {
+  const unlocked = getUnlockedDay();
+
+  // If current day is already behind unlocked progress
+  if (currentDay < unlocked) {
+    openDay(currentDay + 1);
+    return;
+  }
+
+  const last = getLastUnlockTs();
+  const now = Date.now();
+
+  const nextUnlock = new Date(last);
+  nextUnlock.setDate(nextUnlock.getDate() + 1);
+  nextUnlock.setHours(5, 0, 0, 0);
+
+  if (now < nextUnlock.getTime()) {
+    unlockInfo.textContent = "Next day unlocks at 5:00 AM.";
+    return;
+  }
+
+  if (unlocked < TOTAL_DAYS) {
+    setUnlockedDay(unlocked + 1);
+    setLastUnlockTs(now);
+
+    renderDaysList();
+    openDay(unlocked + 1);
+
+    unlockInfo.textContent = "Next day unlocked!";
+  }
+};
+
 
 /* NAV */
 document.getElementById("homeBtn").onclick = () => showView("home");
