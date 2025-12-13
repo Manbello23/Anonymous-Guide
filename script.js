@@ -430,7 +430,7 @@ TODAY’S REFLECTION
 Write: “Today, I choose to trust Allah with ______.”`
   },
 };
-for (let i = 2; i <= TOTAL_DAYS; i++) {
+for (let i = 31; i <= 90; i++) {
   DAYS[i] = {
     fact: "Your journey continues.",
     ayah_ar: "",
