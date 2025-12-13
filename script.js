@@ -446,7 +446,7 @@ const views = {
    notes: document.getElementById("notes"),
   day: document.getElementById("day")
 };
-
+const nextBtn = document.getElementById("nextBtn");
 const dayTitle = document.getElementById("dayTitle");
 const dayContent = document.getElementById("dayContent");
 const didYouKnowText = document.getElementById("didYouKnowText");
@@ -538,6 +538,23 @@ function openDay(day) {
 
   showView("day");
 }
+nextBtn.onclick = () => {
+  const unlocked = getUnlockedDay();
+
+  // If next day is unlocked → go to it
+  if (currentDay + 1 <= unlocked) {
+    openDay(currentDay + 1);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    return;
+  }
+
+  // If NOT unlocked → scroll to bottom of page
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: "smooth"
+  });
+};
+
 function renderNotesPage() {
   const container = document.getElementById("notesList");
   container.innerHTML = "";
