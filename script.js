@@ -429,6 +429,119 @@ Allah sees every intention, every effort, every struggle. Trust that nothing i
 TODAY’S REFLECTION
 Write: “Today, I choose to trust Allah with ______.”`
   },
+    31: {
+     title: "WHEN SILENCE BECOMES NECESSARY",
+    fact: "Allah often withdrew His Prophets into solitude before elevating them — Musa (AS) on the mountain, Muhammad ﷺ in the cave. Silence was never emptiness; it was preparation.",
+    ayah_ar: "وَاذْكُرِ اسْمَ رَبِّكَ وَتَبَتَّلْ إِلَيْهِ تَبْتِيلًا",
+    ayah_trans: "And remember the Name of your Lord and devote yourself to Him completely.” — Qur’an 73:8",
+    text: `THE NEED FOR QUIET 
+    Not every season requires explanation. Some seasons require silence. Less talking. Less reacting. Less performing for the world.
+When you stop explaining yourself, your soul finally has room to breathe. Silence creates space — for clarity, for honesty, for Allah.
+THE HEALING IN WITHDRAWAL 
+Silence is not isolation — it’s protection. It’s how clarity regathers itself. It’s how the heart remembers what truly matters.
+TODAY’S REFLECTION Ask: “Where in my life do I need more silence and less noise?”`
+  },
+    32: {
+     title: "LETTING ALLAH CARRY WHAT YOU CAN'T",
+    fact: "The Qur’an repeatedly reminds humans that they were never meant to carry everything alone — reliance is part of faith.",
+    ayah_ar: "لَا يُكَلِّفُ اللَّهُ نَفْسًا إِلَّا وُسْعَهَا",
+    ayah_trans: "Allah does not burden a soul beyond its capacity.” — Qur’an 2:286",
+    text: `THE WEIGHT YOU’VE BEEN HOLDING 
+    You’ve been trying to manage outcomes. Control emotions. Fix people. Predict the future.
+But some things were never yours to solve — only yours to surrender.
+THE ACT OF RELEASE Tawakkul 
+is not giving up — it’s choosing trust over exhaustion. It’s allowing Allah to do what only He can.
+TODAY’S REFLECTION Write: “One thing I am ready to place fully in Allah’s hands is ______.”`
+  },
+    33: {
+     title: "WHEN FAITH FEELS QUEIT, NOT GONE",
+    fact: "Iman rises and falls — this fluctuation was acknowledged by the companions themselves. Faith was never meant to feel the same every day.",
+    ayah_ar: "رَبَّنَا لَا تُزِغْ قُلُوبَنَا",
+    ayah_trans: "Our Lord, do not let our hearts deviate.” — Qur’an 3:8",
+    text: `THE MISUNDERSTANDING 
+    Faith isn’t always emotional. Sometimes it’s steady. Sometimes silent. Sometimes it’s simply choosing not to leave.
+Quiet faith still holds you — even when you don’t feel held.
+THE REAL TEST 
+Iman is proven in the days you don’t feel inspired — yet still turn back to Allah. Still whisper His name. Still choose sincerity.
+TODAY’S REFLECTION Ask: “How does my faith show up even when I don’t feel it strongly?”`
+  },
+   34: {
+     title: "DETACHING FROM WHAT DRAINS YOU",
+    fact: "The Qur’an warns against attachments that pull the heart away from remembrance — even if they seem harmless.",
+    ayah_ar: "وَلَا تَمُدَّنَّ عَيْنَيْكَ",
+    ayah_trans: "Do not extend your eyes toward what We have given others.” — Qur’an 20:131",
+    text: `THE QUIET DRAIN 
+    Some things exhaust you without you noticing — conversations, comparisons, habits, expectations.
+If something repeatedly steals your peace, it’s asking for distance.
+THE CHOICE OF PROTECTION 
+Detachment isn’t coldness — it’s wisdom. It’s choosing your heart over constant depletion.
+TODAY’S REFLECTION Write: “One attachment that drains me more than it gives is ______.”`
+  },
+   35: {
+     title: "STRENGTHENING YOUR INNER BOUNDARIES",
+    fact: "The Prophet ﷺ protected his time, energy, and heart — even while being the most compassionate of people.",
+    ayah_ar: "وَإِذَا خَاطَبَهُمُ الْجَاهِلُونَ قَالُوا سَلَامًا",
+    ayah_trans: "When the ignorant address them, they say peace.” — Qur’an 25:63",
+    text: `THE IMPORTANCE OF LIMITS
+    Boundaries are not rejection. They are direction. They teach others — and yourself — how to engage with you.
+THE BALANCE 
+You can be kind and firm. Soft and grounded. Present without being consumed.
+TODAY’S REFLECTION Ask: “Where do I need a boundary to protect my peace?”`
+  },
+   36: {
+     title: "LEARNING TO TRUST YOURSELF AGAIN",
+    fact: "Allah honors human intuition when it aligns with truth — your soul was created with awareness.",
+    ayah_ar: "وَنَفْسٍ وَمَا سَوَّاهَا",
+    ayah_trans: "By the soul and the One who fashioned it.” — Qur’an 91:7",
+    text: `THE BROKEN TRUST Maybe you ignored your instincts before. Maybe you doubted yourself too often. Maybe you learned to silence your inner voice.
+But growth restores clarity.
+THE REBUILDING
+Trust yourself where Allah has guided you. Your discernment is stronger now — quieter, but wiser.
+TODAY’S REFLECTION Write: “One way I am learning to trust myself again is ______.”`
+  },
+   37: {
+     title: "WHEN YOU STOP CHASING VALIDATION",
+    fact: "Allah warns that seeking people’s approval at the expense of truth leads to inner loss.",
+    ayah_ar: "وَاللَّهُ أَحَقُّ أَن تَخْشَوْهُ",
+    ayah_trans: "Allah is more deserving that you fear Him.” — Qur’an 9:13",
+    text: `THE EXHAUSTION OF PROVING Trying to be understood by everyone will empty you. Not everyone is meant to understand your path.
+Some journeys are private.
+THE FREEDOM 
+Peace comes when Allah’s acceptance becomes enough — when His approval outweighs every opinion.
+TODAY’S REFLECTION Ask: “Where am I still seeking validation that I no longer need?”`
+  },
+    38: {
+     title: "MAKING PEACE WITH UNANSWERED QUESTIONS",
+    fact: "Some knowledge is intentionally withheld — not as punishment, but as mercy.",
+    ayah_ar: "وَمَا أُوتِيتُم مِّنَ الْعِلْمِ إِلَّا قَلِيلًا",
+    ayah_trans: "You have been given little knowledge.” — Qur’an 17:85",
+    text: `THE QUESTIONS THAT LINGER Why this happened. Why it took so long. Why it didn’t work out.
+Not every answer brings peace — sometimes trust does.
+THE DEEPER TRUST 
+You don’t need full understanding to move forward — you need reliance.
+TODAY’S REFLECTION Write: “The question I’m learning to live without answering yet is ______.”`
+  },
+      39: {
+     title: "CHOOSING INNER ALIGNMENT OVER APPROVAL",
+    fact: "The Qur’an repeatedly praises those who remain upright — even when it’s lonely.",
+    ayah_ar: "فَاسْتَقِمْ كَمَا أُمِرْتَ",
+    ayah_trans: "So remain steadfast as you were commanded.” — Qur’an 11:112",
+    text: `THE TURNING POINT There comes a moment when pleasing others costs you yourself. That moment asks for courage — and honesty.
+THE TRUE ALIGNMENT
+When your actions align with your values, the heart rests. Even if the path feels quieter.
+TODAY’S REFLECTION Ask: “Where do I need to choose integrity over comfort?”`
+  },
+         40: {
+     title: "FEELING ALLAH'S NEARNESS AGAIN",
+    fact: "Closeness to Allah increases with awareness, not distance traveled.",
+    ayah_ar: "إِنَّ اللَّهَ مَعَ الصَّابِرِينَ",
+    ayah_trans: "Indeed, Allah is with the patient.” — Qur’an 2:153",
+    text: `THE RETURN OF PRESENCE After effort, reflection, and patience — the heart begins to feel held again.
+Not dramatically. But securely. Steadily.
+THE STILL CERTAINTY 
+Allah never moved away. You simply became still enough to feel Him again.
+TODAY’S REFLECTION Write: “One moment today where I felt Allah’s nearness was ______.”`
+  },
 };
 for (let i = 31; i <=TOTAL_DAYS ; i++) {
   DAYS[i] = {
