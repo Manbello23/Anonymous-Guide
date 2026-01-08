@@ -439,7 +439,8 @@ Write: “Today, I choose to trust Allah with ______.”`
 When you stop explaining yourself, your soul finally has room to breathe. Silence creates space — for clarity, for honesty, for Allah.
 THE HEALING IN WITHDRAWAL 
 Silence is not isolation — it’s protection. It’s how clarity regathers itself. It’s how the heart remembers what truly matters.
-TODAY’S REFLECTION Ask: “Where in my life do I need more silence and less noise?”`
+TODAY’S REFLECTION 
+Ask: “Where in my life do I need more silence and less noise?”`
   },
     32: {
      title: "LETTING ALLAH CARRY WHAT YOU CAN'T",
@@ -451,7 +452,8 @@ TODAY’S REFLECTION Ask: “Where in my life do I need more silence and les
 But some things were never yours to solve — only yours to surrender.
 THE ACT OF RELEASE Tawakkul 
 is not giving up — it’s choosing trust over exhaustion. It’s allowing Allah to do what only He can.
-TODAY’S REFLECTION Write: “One thing I am ready to place fully in Allah’s hands is ______.”`
+TODAY’S REFLECTION 
+Write: “One thing I am ready to place fully in Allah’s hands is ______.”`
   },
     33: {
      title: "WHEN FAITH FEELS QUEIT, NOT GONE",
@@ -463,7 +465,8 @@ TODAY’S REFLECTION Write: “One thing I am ready to place fully in Allah�
 Quiet faith still holds you — even when you don’t feel held.
 THE REAL TEST 
 Iman is proven in the days you don’t feel inspired — yet still turn back to Allah. Still whisper His name. Still choose sincerity.
-TODAY’S REFLECTION Ask: “How does my faith show up even when I don’t feel it strongly?”`
+TODAY’S REFLECTION 
+Ask: “How does my faith show up even when I don’t feel it strongly?”`
   },
    34: {
      title: "DETACHING FROM WHAT DRAINS YOU",
@@ -475,7 +478,8 @@ TODAY’S REFLECTION Ask: “How does my faith show up even when I don’t f
 If something repeatedly steals your peace, it’s asking for distance.
 THE CHOICE OF PROTECTION 
 Detachment isn’t coldness — it’s wisdom. It’s choosing your heart over constant depletion.
-TODAY’S REFLECTION Write: “One attachment that drains me more than it gives is ______.”`
+TODAY’S REFLECTION 
+Write: “One attachment that drains me more than it gives is ______.”`
   },
    35: {
      title: "STRENGTHENING YOUR INNER BOUNDARIES",
@@ -486,7 +490,8 @@ TODAY’S REFLECTION Write: “One attachment that drains me more than it gi
     Boundaries are not rejection. They are direction. They teach others — and yourself — how to engage with you.
 THE BALANCE 
 You can be kind and firm. Soft and grounded. Present without being consumed.
-TODAY’S REFLECTION Ask: “Where do I need a boundary to protect my peace?”`
+TODAY’S REFLECTION 
+Ask: “Where do I need a boundary to protect my peace?”`
   },
    36: {
      title: "LEARNING TO TRUST YOURSELF AGAIN",
@@ -497,7 +502,8 @@ TODAY’S REFLECTION Ask: “Where do I need a boundary to protect my peace?
 But growth restores clarity.
 THE REBUILDING
 Trust yourself where Allah has guided you. Your discernment is stronger now — quieter, but wiser.
-TODAY’S REFLECTION Write: “One way I am learning to trust myself again is ______.”`
+TODAY’S REFLECTION 
+Write: “One way I am learning to trust myself again is ______.”`
   },
    37: {
      title: "WHEN YOU STOP CHASING VALIDATION",
@@ -508,7 +514,8 @@ TODAY’S REFLECTION Write: “One way I am learning to trust myself again i
 Some journeys are private.
 THE FREEDOM 
 Peace comes when Allah’s acceptance becomes enough — when His approval outweighs every opinion.
-TODAY’S REFLECTION Ask: “Where am I still seeking validation that I no longer need?”`
+TODAY’S REFLECTION 
+Ask: “Where am I still seeking validation that I no longer need?”`
   },
     38: {
      title: "MAKING PEACE WITH UNANSWERED QUESTIONS",
@@ -519,7 +526,8 @@ TODAY’S REFLECTION Ask: “Where am I still seeking validation that I no l
 Not every answer brings peace — sometimes trust does.
 THE DEEPER TRUST 
 You don’t need full understanding to move forward — you need reliance.
-TODAY’S REFLECTION Write: “The question I’m learning to live without answering yet is ______.”`
+TODAY’S REFLECTION 
+Write: “The question I’m learning to live without answering yet is ______.”`
   },
       39: {
      title: "CHOOSING INNER ALIGNMENT OVER APPROVAL",
@@ -529,7 +537,8 @@ TODAY’S REFLECTION Write: “The question I’m learning to live without a
     text: `THE TURNING POINT There comes a moment when pleasing others costs you yourself. That moment asks for courage — and honesty.
 THE TRUE ALIGNMENT
 When your actions align with your values, the heart rests. Even if the path feels quieter.
-TODAY’S REFLECTION Ask: “Where do I need to choose integrity over comfort?”`
+TODAY’S REFLECTION 
+Ask: “Where do I need to choose integrity over comfort?”`
   },
          40: {
      title: "FEELING ALLAH'S NEARNESS AGAIN",
@@ -540,7 +549,132 @@ TODAY’S REFLECTION Ask: “Where do I need to choose integrity over comfor
 Not dramatically. But securely. Steadily.
 THE STILL CERTAINTY 
 Allah never moved away. You simply became still enough to feel Him again.
-TODAY’S REFLECTION Write: “One moment today where I felt Allah’s nearness was ______.”`
+TODAY’S REFLECTION 
+Write: “One moment today where I felt Allah’s nearness was ______.”`
+  },
+     41: {
+     title: "STANDING FIRM WHEN DOUBT APPEARS",
+    fact: "Even the strongest believers experienced moments of doubt — but they did not let doubt decide their direction.",
+    ayah_ar: "فَلَا تَهِنُوا وَلَا تَحْزَنُوا",
+    ayah_trans: "So do not weaken and do not grieve.” — Qur’an 3:139",
+    text: `WHEN DOUBT WHISPERS Doubt doesn’t mean your faith is broken. It means your heart is stretching — questioning, refining, learning where to stand.
+Doubt only becomes dangerous when it replaces trust.
+THE STEADY RESPONSE 
+You don’t need to silence doubt completely. You need to anchor yourself despite it.
+Faith is choosing Allah — even when questions remain.
+TODAY’S REFLECTION 
+Ask: “What doubt do I need to face without letting it control me?”`
+  }, 
+  42: {
+     title: "REMEMBERING WHY YOU STARTED",
+    fact: "Intentions are so powerful in Islam that actions are weighed by them.",
+    ayah_ar: "وَمَا أُمِرُوا إِلَّا لِيَعْبُدُوا اللَّهَ مُخْلِصِينَ لَهُ الدِّينَ",
+    ayah_trans: "They were only commanded to worship Allah sincerely.” — Qur’an 98:5",
+    text: `LOSING SIGHT OF THE WHY Along the way, motivation fades. Routine replaces meaning. Effort becomes heavy.
+This is when returning to intention matters most.
+THE REALIGNMENT 
+Why did you begin this journey? What did your heart want when it first turned toward Allah?
+Reconnect with that sincerity.
+TODAY’S REFLECTION 
+Write: “The reason I began this journey was ______.”`
+  }, 
+   43: {
+     title: "ACCEPTING THAT NOT EVERYONE WILL UNDERSTAND",
+    fact: "Many Prophets were misunderstood — even rejected — by those closest to them.",
+    ayah_ar: "وَقَلِيلٌ مِّنْ عِبَادِيَ الشَّكُورُ",
+    ayah_trans: "And few of My servants are truly grateful.” — Qur’an 34:13",
+    text: `THE PAIN OF BEING MISREAD When you grow, some people won’t recognize you anymore. Not because you’re wrong — but because you’ve changed.
+Understanding is not guaranteed.
+THE PEACE IN ACCEPTANCE 
+You don’t need permission to grow. You don’t need validation to obey Allah.
+Your sincerity is enough.
+TODAY’S REFLECTION 
+Ask: “Who am I trying to be understood by — and why?”`
+  }, 
+   44: {
+     title: "STRENGTH THROUGH CONSISTENT SINCERITY",
+    fact: "Allah values what is sincere more than what is impressive.",
+    ayah_ar: "أَلَا لِلَّهِ الدِّينُ الْخَالِصُ",
+    ayah_trans: "Unquestionably, for Allah is pure religion.” — Qur’an 39:3",
+    text: `THE QUIET PATH Not every act needs an audience. Not every effort needs recognition.
+Some of the strongest deeds happen unseen.
+THE INNER STRENGTH 
+Sincerity builds resilience. When your heart knows why it acts, it doesn’t collapse under pressure.
+TODAY’S REFLECTION 
+Write: “One action I want to do purely for Allah is ______.”`
+  },
+    45: {
+     title: "WHEN YOU FEEL EMOTIONALLY TIRED",
+    fact: "Rest is acknowledged in Islam — even the soul has rights.",
+    ayah_ar: "وَجَعَلْنَا نَوْمَكُمْ سُبَاتًا",
+    ayah_trans: "And We made your sleep a means of rest.” — Qur’an 78:9",
+    text: `THE TIREDNESS THAT ISN’T PHYSICAL Some exhaustion comes from carrying emotions too long. From being strong quietly. From holding things together.
+This tiredness deserves gentleness.
+THE PERMISSION TO REST 
+Rest is not giving up. It’s refueling your heart so it can continue with sincerity.
+TODAY’S REFLECTION 
+Ask: “What kind of rest does my heart need right now?”`
+  }, 
+   46: {
+     title: "CHOOSING HOPE AGAIN",
+    fact: "Despair is never encouraged in the Qur’an — hope is an act of faith.",
+    ayah_ar: "لَا تَقْنَطُوا مِن رَّحْمَةِ اللَّهِ",
+    ayah_trans: "Do not despair of the mercy of Allah.” — Qur’an 39:53",
+    text: `WHEN HOPE FEELS DISTANT Hope doesn’t always feel bright. Sometimes it’s just a decision — to not give up.
+Even quiet hope counts.
+THE RETURN TO LIGHT 
+Allah’s mercy is larger than your mistakes, delays, or fears.
+Hope reconnects you to that truth.
+TODAY’S REFLECTION 
+Write: “One area of my life where I want to choose hope again is ______.”`
+  },
+  47: {
+     title: "TRUSTING THE WISDOM BEHIND DELAYS",
+    fact: "Delays in the Qur’an often came with greater outcomes than expected.",
+    ayah_ar: "وَاللَّهُ يَعْلَمُ وَأَنتُمْ لَا تَعْلَمُونَ",
+    ayah_trans: "And Allah knows, while you do not know.” — Qur’an 2:216",
+    text: `THE FRUSTRATION OF WAITING Waiting tests patience, trust, and ego. It asks you to release control.
+THE HIDDEN MERCY 
+What feels late may be protecting you. What feels withheld may be preparing you.
+TODAY’S REFLECTION 
+Ask: “What delay might be serving me in ways I don’t see yet?”`
+  },
+     48: {
+     title: "BECOMING EMOTIONALLY HONEST WITH ALLAH",
+    fact: "The Qur’an records raw du‘ā — fear, anger, grief, confusion — all spoken to Allah.",
+    ayah_ar: "إِنِّي أَشْكُو بَثِّي وَحُزْنِي إِلَى اللَّهِ",
+    ayah_trans: "I complain of my sorrow and grief only to Allah.” — Qur’an 12:86",
+    text: `THE NEED FOR HONESTY You don’t need polished words. You don’t need composure.
+Allah already knows — honesty simply opens the door.
+THE RELIEF OF SPEAKING
+Emotion expressed to Allah becomes lighter. Silence becomes safe again.
+TODAY’S REFLECTION 
+Write: “One feeling I want to speak honestly to Allah about is ______.”`
+  },
+   49: {
+     title: "WHEN PEACE STARTS TO FEEL FAMILIAR",
+    fact: "Tranquility is described as a gift Allah places in hearts.",
+    ayah_ar: "هُوَ الَّذِي أَنزَلَ السَّكِينَةَ فِي قُلُوبِ الْمُؤْمِنِينَ",
+    ayah_trans: "He sent tranquility into the hearts of the believers.” — Qur’an 48:4",
+    text: `THE SOFT SETTLING Peace doesn’t arrive loudly. It settles. It stays longer. It feels familiar.
+This is growth.
+THE GRATITUDE 
+Pause and notice this calm. It didn’t come easily — and it didn’t come by accident.
+TODAY’S REFLECTION 
+Write: “One way I feel more at peace now than before is ______.”`
+  }, 
+ 50: {
+     title: "REALIZING HOW FAR YOU'VE COME",
+    fact: "Reflection is encouraged in Islam as a form of awareness and gratitude.",
+    ayah_ar: "أَفَلَا يَتَدَبَّرُونَ",
+    ayah_trans: "Do they not reflect?” — Qur’an 4:82",
+    text: `LOOKING BACK GENTLY You didn’t transform overnight. But you softened. You grew aware. You became more honest with yourself and Allah.
+That matters.
+THE ACKNOWLEDGMENT 
+Honor your effort. Recognize your resilience.
+This journey shaped you.
+TODAY’S REFLECTION 
+Ask: “What growth in me deserves recognition today?”`
   },
 };
 for (let i = 31; i <=TOTAL_DAYS ; i++) {
